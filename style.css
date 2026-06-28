@@ -51,6 +51,35 @@ body {
 }
 .wrap--wide { max-width: 64rem; }   /* schedule page needs room */
 
+/* homepage: identity panel on the left, prose on the right */
+.home {
+  max-width: 58rem;
+  display: grid;
+  grid-template-columns: 16rem 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+.profile { margin: 0; }
+.profile h1 { margin-top: 0; }
+.profile .lead { font-size: 1rem; color: var(--ink-soft); }
+.home-body > :first-child { margin-top: 0; }
+.headshot {
+  display: block;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--band);
+  margin: 0 0 1.1rem;
+}
+@media (max-width: 700px) {
+  .home {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    max-width: var(--maxw);
+  }
+}
+
 /* ---- masthead + primary nav ---- */
 .masthead {
   border-bottom: 2px solid var(--olive);
@@ -213,9 +242,11 @@ thead th, th[scope="col"], th[scope="row"] {
 .schedule th[scope="row"] {
   background: var(--band);
 }
-/* Week column ~half the width of a day column; the 5 day columns share the rest */
+/* Week column a bit narrower than the day columns; the 5 days share the rest */
 .schedule thead th:first-child,
-.schedule th[scope="row"] { width: 9%; }
+.schedule th[scope="row"] { width: 13%; }
+/* keep long topic words (e.g. "Transformers") whole — no hyphenation */
+.schedule th[scope="row"] { hyphens: none; overflow-wrap: normal; word-break: normal; }
 .schedule .wk-num { font-weight: 700; }
 .schedule .wk-theme { font-weight: 400; font-size: .9em; color: var(--ink-soft); display: block; margin-top: .2rem; }
 .schedule .date { font-size: .82em; color: var(--ink-soft); display: block; margin-bottom: .35rem; }
