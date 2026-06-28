@@ -1,21 +1,29 @@
 /* ============================================================
    Annapurna Vadaparty — academic site
    ONE shared stylesheet for the whole site.
-   Palette: parchment background, warm near-black ink,
-   one maroon accent for links, olive reserved for large/
-   structural use only (rules, focus rings, header bands).
+
+   Vibe modeled on shannon-ellis.com: clean white background,
+   light-gray header band, Montserrat body / Lato headings,
+   a single narrow reading column, and one accent color used
+   for headings (h3) and links. Her indigo accent is replaced
+   here with maroon.
    ============================================================ */
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;600;700&display=swap');
+
 :root {
-  --bg:           #f4efe3;  /* parchment            */
-  --ink:          #221c17;  /* warm near-black text */
-  --ink-soft:     #4a4239;  /* muted text (≥8:1)    */
-  --link:         #7a2024;  /* maroon accent        */
-  --link-visited: #5f1a20;  /* darker maroon        */
-  --olive:        #56592b;  /* structural / large   */
-  --rule:         #cabd9f;  /* tan borders (non-text) */
-  --band:         #e9e0cd;  /* light header band    */
-  --maxw:         44rem;    /* reading measure      */
+  --bg:          #ffffff;  /* page background        */
+  --band:        #f5f5f5;  /* header / table band    */
+  --text:        #333333;  /* body text              */
+  --heading:     #222222;  /* headings, nav          */
+  --accent:      #5f1a20;  /* maroon (replaces Ellis indigo); 12.7:1 on white */
+  --accent-dark: #4a1418;  /* visited / stronger; 15:1 on white */
+  --accent-soft: #e0c9ca;  /* link hover background (maroon text ≥8:1 on it) */
+  --rule:        #eaeaea;  /* hairline borders        */
+  --rule-soft:   #e5e5e5;  /* faint dividers          */
+  --muted:       #595959;  /* footer / secondary; 7:1 on white (AAA) */
+  --faint:       #6a6a6a;  /* dates / least important; 5.4:1 on white (AA) */
+  --maxw:        700px;    /* reading measure         */
 }
 
 /* ---- reset-ish ---- */
@@ -24,11 +32,16 @@ html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   background: var(--bg);
-  color: var(--ink);
-  font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  font-size: 1.0625rem;
-  line-height: 1.6;
+  color: var(--text);
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@media (min-width: 600px) {
+  body { font-size: 19px; line-height: 1.8; }
 }
 
 /* ---- skip link ---- */
@@ -37,17 +50,17 @@ body {
   left: -9999px;
   top: 0;
   background: var(--bg);
-  color: var(--link);
+  color: var(--accent);
   padding: .5rem .75rem;
-  border: 2px solid var(--olive);
+  border: 2px solid var(--accent);
 }
 .skip:focus { left: .5rem; top: .5rem; z-index: 10; }
 
 /* ---- layout ---- */
 .wrap {
   max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 1.5rem 1.25rem 4rem;
+  margin: 40px auto 10px;
+  padding: 0 15px 3rem;
 }
 .wrap--wide { max-width: 64rem; }   /* schedule page needs room */
 
@@ -61,14 +74,14 @@ body {
 }
 .profile {
   margin: 0;
-  /* soft tint that fades out to the parchment background — no hard edge */
-  background: radial-gradient(110% 80% at 50% 50%, var(--band), rgba(233, 224, 205, 0) 72%);
+  /* soft tint that fades out to the white background — no hard edge */
+  background: radial-gradient(110% 80% at 50% 50%, var(--band), rgba(245, 245, 245, 0) 72%);
   border-radius: 14px;
   padding: 1.5rem 1.25rem;
   text-align: center;
 }
 .profile h1 { margin-top: 0; }
-.profile .lead { font-size: 1rem; color: var(--ink-soft); }
+.profile .lead { font-size: 1rem; color: var(--muted); }
 .home-body > :first-child { margin-top: 0; }
 .headshot {
   display: block;
@@ -92,27 +105,31 @@ body {
 
 /* ---- masthead + primary nav ---- */
 .masthead {
-  border-bottom: 2px solid var(--olive);
+  background: var(--band);
+  border-bottom: 1px solid var(--rule);
+  padding: 20px 0;
 }
+@media (min-width: 600px) { .masthead { padding: 25px 0; } }
 .topnav {
-  max-width: 64rem;
+  max-width: var(--maxw);   /* match the content column so the name lines up with the page h1 */
   margin: 0 auto;
-  padding: 1.1rem 1.25rem .9rem;
+  padding: 0 15px;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   gap: .5rem 1.5rem;
+  font-family: 'Lato', sans-serif;
 }
 .topnav .site-name {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--heading);
   text-decoration: none;
   margin-right: auto;
   letter-spacing: .01em;
 }
 .topnav .site-name:hover,
-.topnav .site-name:focus { text-decoration: underline; }
+.topnav .site-name:focus { color: var(--accent); }
 .topnav ul {
   list-style: none;
   display: flex;
@@ -120,20 +137,25 @@ body {
   gap: 1.25rem;
   margin: 0;
   padding: 0;
+  font-size: 14px;
+}
+@media (min-width: 600px) {
+  .topnav ul { font-size: 18px; gap: 1.875rem; }
 }
 .topnav a {
-  color: var(--ink);
+  color: var(--heading);
   text-decoration: none;
 }
 .topnav a:hover,
-.topnav a:focus { text-decoration: underline; }
+.topnav a:focus { color: var(--accent); }
 .topnav a[aria-current="page"] {
   font-weight: 700;
-  border-bottom: 2px solid var(--link);
+  border-bottom: 2px solid var(--accent);
 }
 
 /* ---- course sub-nav ---- */
 .coursenav {
+  font-family: 'Lato', sans-serif;
   display: flex;
   flex-wrap: wrap;
   gap: .25rem 1.25rem;
@@ -141,53 +163,68 @@ body {
   padding: .65rem 0;
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
+  font-size: .95rem;
 }
 .coursenav a {
-  color: var(--link);
+  color: var(--accent);
   text-decoration: none;
 }
 .coursenav a:hover,
-.coursenav a:focus { text-decoration: underline; }
+.coursenav a:focus { background: var(--accent-soft); }
 .coursenav a[aria-current="page"] {
-  color: var(--ink);
+  color: var(--heading);
   font-weight: 700;
-  text-decoration: none;
-  border-bottom: 2px solid var(--link);
+  background: transparent;
+  border-bottom: 2px solid var(--accent);
 }
 
 /* ---- typography ---- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+  color: var(--heading);
+  line-height: 1.3;
+}
 h1 {
-  font-size: 1.85rem;
-  line-height: 1.2;
+  font-size: 2.125rem;
   font-weight: 700;
   margin: .25rem 0 1rem;
 }
+@media (min-width: 600px) { h1 { font-size: 2.625rem; } }
 h2 {
-  font-size: 1.3rem;
-  line-height: 1.25;
+  font-size: 1.5rem;
   margin: 2.25rem 0 .6rem;
-  padding-bottom: .2rem;
-  border-bottom: 1px solid var(--rule);
 }
 h3 {
-  font-size: 1.08rem;
+  font-size: 1.2rem;
+  color: var(--accent);   /* Ellis accents h3; maroon here */
   margin: 1.5rem 0 .35rem;
 }
 p, ul, ol, dl, table { margin: 0 0 1rem; }
 .lead { font-size: 1.12rem; }
 .kicker {
+  font-family: 'Lato', sans-serif;
   font-size: .8rem;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--ink-soft);
+  color: var(--muted);
   margin: 0 0 .35rem;
 }
 
-/* ---- links in body content ---- */
-a { color: var(--link); }
-a:visited { color: var(--link-visited); }
-main a:not(.btn-link) { text-decoration: underline; text-underline-offset: 2px; }
-main a:hover, main a:focus { text-decoration-thickness: 2px; }
+/* ---- links in body content ----
+   Ellis style is color + a soft highlight on hover. But maroon links sit at
+   essentially the same luminance as the body text, so colour alone is not a
+   sufficient cue (WCAG 1.4.1 / technique G183). Links embedded in prose and
+   lists therefore carry an underline; the grouped nav bars (topnav, coursenav,
+   footer) read as navigation and keep the clean, underline-free look. */
+a { color: var(--accent); }
+a:visited { color: var(--accent-dark); }
+main a:not(.btn-link) { transition: background 150ms ease; }
+main a:not(.btn-link):hover,
+main a:not(.btn-link):focus { background: var(--accent-soft); }
+main p a, main li a, main dd a, main dt a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 
 /* ---- lists ---- */
 ul, ol { padding-left: 1.25rem; }
@@ -196,26 +233,21 @@ li { margin: .2rem 0; }
 .plain-list > li { margin: .55rem 0; }
 
 /* ---- description / metadata blocks ---- */
-.meta {
-  margin: 0 0 1.25rem;
-}
-.meta dt {
-  font-weight: 700;
-  margin-top: .5rem;
-}
+.meta { margin: 0 0 1.25rem; }
+.meta dt { font-weight: 700; margin-top: .5rem; }
 .meta dd { margin: 0 0 .25rem; }
 
 /* ---- TBD placeholder (visibly marked) ---- */
 .tbd {
   display: inline-block;
   font-style: italic;
-  color: var(--ink-soft);
-  border-bottom: 1px dotted var(--ink-soft);
+  color: var(--muted);
+  border-bottom: 1px dotted var(--muted);
 }
 
 /* ---- generic tables ---- */
 table { border-collapse: collapse; width: 100%; }
-caption { text-align: left; font-style: italic; color: var(--ink-soft); margin-bottom: .4rem; }
+caption { text-align: left; font-style: italic; color: var(--muted); margin-bottom: .4rem; }
 th, td {
   border: 1px solid var(--rule);
   padding: .5rem .6rem;
@@ -258,33 +290,35 @@ thead th, th[scope="col"], th[scope="row"] {
 /* keep long topic words (e.g. "Transformers") whole — no hyphenation */
 .schedule th[scope="row"] { hyphens: none; overflow-wrap: normal; word-break: normal; }
 .schedule .wk-num { font-weight: 700; }
-.schedule .wk-theme { font-weight: 400; font-size: .9em; color: var(--ink-soft); display: block; margin-top: .2rem; }
-.schedule .date { font-size: .82em; color: var(--ink-soft); display: block; margin-bottom: .35rem; }
+.schedule .wk-theme { font-weight: 400; font-size: .9em; color: var(--muted); display: block; margin-top: .2rem; }
+.schedule .date { font-size: .82em; color: var(--faint); display: block; margin-bottom: .35rem; }
 
 /* typed item groups inside a day cell */
 .grp { margin: 0 0 .55rem; }
 .grp:last-child { margin-bottom: 0; }
 .grp .label {
+  font-family: 'Lato', sans-serif;
   display: block;
   font-size: .68rem;
   letter-spacing: .09em;
   text-transform: uppercase;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--heading);
   margin-bottom: .15rem;
 }
 .grp ul { list-style: none; padding-left: 0; margin: 0; }
 .grp li { margin: .1rem 0; line-height: 1.4; }
-.grp a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+.grp a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.grp a:hover, .grp a:focus { background: var(--accent-soft); }
 
 /* the five item types share styling; the label distinguishes them.
    A thin left rule (structural) keeps groups legible without color-coding,
    so meaning never depends on color alone. */
-.grp-pre-lecture  { border-left: 3px solid var(--rule);  padding-left: .5rem; }
-.grp-lecture-topic{ border-left: 3px solid var(--olive); padding-left: .5rem; }
-.grp-discussion   { border-left: 3px solid var(--rule);  padding-left: .5rem; }
-.grp-assessment   { border-left: 3px solid var(--olive); padding-left: .5rem; }
-.grp-deadline     { border-left: 3px solid var(--link);  padding-left: .5rem; }
+.grp-pre-lecture  { border-left: 3px solid var(--rule-soft); padding-left: .5rem; }
+.grp-lecture-topic{ border-left: 3px solid var(--accent);    padding-left: .5rem; }
+.grp-discussion   { border-left: 3px solid var(--rule-soft); padding-left: .5rem; }
+.grp-assessment   { border-left: 3px solid var(--accent);    padding-left: .5rem; }
+.grp-deadline     { border-left: 3px solid var(--accent-dark); padding-left: .5rem; }
 
 /* ---- schedule: stacked layout below 700px ---- */
 @media (max-width: 700px) {
@@ -300,7 +334,7 @@ thead th, th[scope="col"], th[scope="row"] {
     width: auto;
   }
   .schedule tr {
-    border: 1px solid var(--olive);
+    border: 1px solid var(--accent);
     margin: 0 0 1.5rem;
     padding: .25rem;
   }
@@ -320,6 +354,7 @@ thead th, th[scope="col"], th[scope="row"] {
   .schedule td:empty { display: none; }      /* drop blank days on mobile */
   .schedule td::before {
     content: attr(data-day);
+    font-family: 'Lato', sans-serif;
     display: block;
     font-weight: 700;
     font-size: .95rem;
@@ -331,19 +366,23 @@ thead th, th[scope="col"], th[scope="row"] {
 a:focus-visible,
 button:focus-visible,
 [tabindex]:focus-visible {
-  outline: 3px solid var(--olive);
+  outline: 3px solid var(--accent);
   outline-offset: 2px;
 }
 
 /* ---- footer ---- */
 .foot {
+  font-family: 'Lato', sans-serif;
   border-top: 1px solid var(--rule);
-  max-width: 64rem;
+  max-width: var(--maxw);   /* match nav + content column */
   margin: 0 auto;
-  padding: 1.25rem;
+  padding: 25px 15px;
+  text-align: center;
   font-size: .9rem;
-  color: var(--ink-soft);
+  color: var(--muted);
 }
+.foot a { color: var(--muted); text-decoration: none; }
+.foot a:hover, .foot a:focus { color: var(--heading); }
 
 /* ---- reduced motion (we use none, but honor intent) ---- */
 @media (prefers-reduced-motion: reduce) {
@@ -354,5 +393,4 @@ button:focus-visible,
 @media (max-width: 480px) {
   .topnav { gap: .4rem 1rem; }
   .topnav ul { gap: 1rem; }
-  h1 { font-size: 1.55rem; }
 }
