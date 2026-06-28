@@ -1,0 +1,317 @@
+/* ============================================================
+   Annapurna Vadaparty — academic site
+   ONE shared stylesheet for the whole site.
+   Palette: parchment background, warm near-black ink,
+   one maroon accent for links, olive reserved for large/
+   structural use only (rules, focus rings, header bands).
+   ============================================================ */
+
+:root {
+  --bg:           #f4efe3;  /* parchment            */
+  --ink:          #221c17;  /* warm near-black text */
+  --ink-soft:     #4a4239;  /* muted text (≥8:1)    */
+  --link:         #7a2024;  /* maroon accent        */
+  --link-visited: #5f1a20;  /* darker maroon        */
+  --olive:        #56592b;  /* structural / large   */
+  --rule:         #cabd9f;  /* tan borders (non-text) */
+  --band:         #e9e0cd;  /* light header band    */
+  --maxw:         44rem;    /* reading measure      */
+}
+
+/* ---- reset-ish ---- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---- skip link ---- */
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--bg);
+  color: var(--link);
+  padding: .5rem .75rem;
+  border: 2px solid var(--olive);
+}
+.skip:focus { left: .5rem; top: .5rem; z-index: 10; }
+
+/* ---- layout ---- */
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 4rem;
+}
+.wrap--wide { max-width: 64rem; }   /* schedule page needs room */
+
+/* ---- masthead + primary nav ---- */
+.masthead {
+  border-bottom: 2px solid var(--olive);
+}
+.topnav {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 1.1rem 1.25rem .9rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .5rem 1.5rem;
+}
+.topnav .site-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  margin-right: auto;
+  letter-spacing: .01em;
+}
+.topnav .site-name:hover,
+.topnav .site-name:focus { text-decoration: underline; }
+.topnav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+}
+.topnav a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.topnav a:hover,
+.topnav a:focus { text-decoration: underline; }
+.topnav a[aria-current="page"] {
+  font-weight: 700;
+  border-bottom: 2px solid var(--link);
+}
+
+/* ---- course sub-nav ---- */
+.coursenav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem 1.25rem;
+  margin: 0 0 2rem;
+  padding: .65rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.coursenav a {
+  color: var(--link);
+  text-decoration: none;
+}
+.coursenav a:hover,
+.coursenav a:focus { text-decoration: underline; }
+.coursenav a[aria-current="page"] {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid var(--link);
+}
+
+/* ---- typography ---- */
+h1 {
+  font-size: 1.85rem;
+  line-height: 1.2;
+  font-weight: 700;
+  margin: .25rem 0 1rem;
+}
+h2 {
+  font-size: 1.3rem;
+  line-height: 1.25;
+  margin: 2.25rem 0 .6rem;
+  padding-bottom: .2rem;
+  border-bottom: 1px solid var(--rule);
+}
+h3 {
+  font-size: 1.08rem;
+  margin: 1.5rem 0 .35rem;
+}
+p, ul, ol, dl, table { margin: 0 0 1rem; }
+.lead { font-size: 1.12rem; }
+.kicker {
+  font-size: .8rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 .35rem;
+}
+
+/* ---- links in body content ---- */
+a { color: var(--link); }
+a:visited { color: var(--link-visited); }
+main a:not(.btn-link) { text-decoration: underline; text-underline-offset: 2px; }
+main a:hover, main a:focus { text-decoration-thickness: 2px; }
+
+/* ---- lists ---- */
+ul, ol { padding-left: 1.25rem; }
+li { margin: .2rem 0; }
+.plain-list { list-style: none; padding-left: 0; }
+.plain-list > li { margin: .55rem 0; }
+
+/* ---- description / metadata blocks ---- */
+.meta {
+  margin: 0 0 1.25rem;
+}
+.meta dt {
+  font-weight: 700;
+  margin-top: .5rem;
+}
+.meta dd { margin: 0 0 .25rem; }
+
+/* ---- TBD placeholder (visibly marked) ---- */
+.tbd {
+  display: inline-block;
+  font-style: italic;
+  color: var(--ink-soft);
+  border-bottom: 1px dotted var(--ink-soft);
+}
+
+/* ---- generic tables ---- */
+table { border-collapse: collapse; width: 100%; }
+caption { text-align: left; font-style: italic; color: var(--ink-soft); margin-bottom: .4rem; }
+th, td {
+  border: 1px solid var(--rule);
+  padding: .5rem .6rem;
+  vertical-align: top;
+  text-align: left;
+}
+thead th, th[scope="col"], th[scope="row"] {
+  background: var(--band);
+  font-weight: 700;
+}
+
+/* ============================================================
+   SCHEDULE GRID
+   Rendered by schedule.js into <div id="schedule-grid">.
+   Real <table>; reflows to stacked per-day blocks < 700px.
+   ============================================================ */
+.schedule {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;   /* equal-width columns */
+  font-size: .95rem;
+}
+.schedule caption { margin-bottom: .6rem; }
+.schedule th, .schedule td {
+  border: 1px solid var(--rule);
+  padding: .5rem .55rem;
+  vertical-align: top;
+}
+.schedule thead th {
+  background: var(--band);
+  text-align: left;
+  white-space: nowrap;
+}
+.schedule th[scope="row"] {
+  background: var(--band);
+}
+/* Week column ~half the width of a day column; the 5 day columns share the rest */
+.schedule thead th:first-child,
+.schedule th[scope="row"] { width: 9%; }
+.schedule .wk-num { font-weight: 700; }
+.schedule .wk-theme { font-weight: 400; font-size: .9em; color: var(--ink-soft); display: block; margin-top: .2rem; }
+.schedule .date { font-size: .82em; color: var(--ink-soft); display: block; margin-bottom: .35rem; }
+
+/* typed item groups inside a day cell */
+.grp { margin: 0 0 .55rem; }
+.grp:last-child { margin-bottom: 0; }
+.grp .label {
+  display: block;
+  font-size: .68rem;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: .15rem;
+}
+.grp ul { list-style: none; padding-left: 0; margin: 0; }
+.grp li { margin: .1rem 0; line-height: 1.4; }
+.grp a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+
+/* the five item types share styling; the label distinguishes them.
+   A thin left rule (structural) keeps groups legible without color-coding,
+   so meaning never depends on color alone. */
+.grp-pre-lecture  { border-left: 3px solid var(--rule);  padding-left: .5rem; }
+.grp-lecture-topic{ border-left: 3px solid var(--olive); padding-left: .5rem; }
+.grp-discussion   { border-left: 3px solid var(--rule);  padding-left: .5rem; }
+.grp-assessment   { border-left: 3px solid var(--olive); padding-left: .5rem; }
+.grp-deadline     { border-left: 3px solid var(--link);  padding-left: .5rem; }
+
+/* ---- schedule: stacked layout below 700px ---- */
+@media (max-width: 700px) {
+  /* keep column headers in the accessibility tree, hide visually */
+  .schedule thead {
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden; clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .schedule, .schedule tbody, .schedule tr, .schedule th, .schedule td {
+    display: block;
+    width: auto;
+  }
+  .schedule tr {
+    border: 1px solid var(--olive);
+    margin: 0 0 1.5rem;
+    padding: .25rem;
+  }
+  .schedule th[scope="row"] {
+    width: auto;
+    font-size: 1.05rem;
+    border: none;
+    border-bottom: 2px solid var(--rule);
+    margin-bottom: .25rem;
+  }
+  .schedule td {
+    border: none;
+    border-bottom: 1px solid var(--rule);
+    padding: .55rem .25rem;
+  }
+  .schedule td:last-child { border-bottom: none; }
+  .schedule td:empty { display: none; }      /* drop blank days on mobile */
+  .schedule td::before {
+    content: attr(data-day);
+    display: block;
+    font-weight: 700;
+    font-size: .95rem;
+    margin-bottom: .25rem;
+  }
+}
+
+/* ---- focus visibility (keyboard) ---- */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--olive);
+  outline-offset: 2px;
+}
+
+/* ---- footer ---- */
+.foot {
+  border-top: 1px solid var(--rule);
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+  font-size: .9rem;
+  color: var(--ink-soft);
+}
+
+/* ---- reduced motion (we use none, but honor intent) ---- */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* ---- small screens: tighten masthead ---- */
+@media (max-width: 480px) {
+  .topnav { gap: .4rem 1rem; }
+  .topnav ul { gap: 1rem; }
+  h1 { font-size: 1.55rem; }
+}
