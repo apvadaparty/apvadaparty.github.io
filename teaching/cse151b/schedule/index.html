@@ -26,21 +26,25 @@
   </nav>
   <!-- COURSE-NAV:END -->
 
-  <!-- JS-rendered from ../schedule.js into #schedule-grid. -->
-  <div id="schedule-grid">
+  <section aria-labelledby="schedule-heading">
+    <h2 id="schedule-heading">Schedule</h2>
+
+<!-- The renderer fills this. It is empty (not blank-looking) only if JS is off. -->
+    <div id="schedule" class="schedule"></div>
+
     <noscript>
-      <p>
-        The interactive schedule grid requires JavaScript. The full schedule is in the
-        <a href="../syllabus.pdf">course syllabus (PDF)</a>.
-      </p>
+      <p>The interactive schedule needs JavaScript. The full schedule and all deadlines are
+         in the <a href="../syllabus.pdf">course syllabus (PDF)</a>.</p>
     </noscript>
-  </div>
+  </section>
 </main>
 
 <footer class="foot">
   <p>CSE 151B &middot; Annapurna Vadaparty &middot; <a href="mailto:avadaparty@ucsd.edu">avadaparty@ucsd.edu</a></p>
 </footer>
 
+<!-- order matters: data first, then renderer -->
 <script src="../schedule.js"></script>
+<script src="render-schedule.js"></script>
 </body>
 </html>
