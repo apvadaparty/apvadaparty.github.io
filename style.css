@@ -338,7 +338,7 @@ button:focus-visible,
   font-size: .9rem;
   color: var(--muted);
 }
-.foot a { color: var(--muted); text-decoration: none; }
+.foot a { color: var(--muted); text-decoration: underline; }
 .foot a:hover, .foot a:focus { color: var(--heading); }
 
 /* ---- reduced motion (we use none, but honor intent) ---- */
