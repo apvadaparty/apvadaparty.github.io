@@ -46,7 +46,7 @@ const SCHEDULE = {
       days: [
         { weekday: "Mon", date: "Jun 29", lanes: {
           duePre:     [{ text: "Pre-course survey" }],
-          lecture:    [{ text: "Intro & Syllabus" }],
+          lecture:    [{ text: "Intro & Syllabus", href: "../slides/lecture-jun29.pdf" }],
           discussion: [{ text: "Setup" }, { text: "Study tips" }]
         }},
         { weekday: "Tue", date: "Jun 30", lanes: {
