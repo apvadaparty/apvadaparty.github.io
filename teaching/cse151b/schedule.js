@@ -56,7 +56,7 @@ const SCHEDULE = {
             { text: "StatQuest: Ch 1, 3" }
           ],
           duePre:     [{ text: "Pre-lecture HW due" }],
-          lecture:    [{ text: "MLPs" }, { text: "Oral assessment demo" }]
+          lecture:    [{ text: "Neural Networks and Computation Graphs", href: "../slides/lecture-jun30.pdf" }]
         }},
         { weekday: "Wed", date: "Jul 1", lanes: {
           materials:  [
