@@ -36,7 +36,7 @@ const SCHEDULE = {
     materials:  "Pre-lecture materials",
     duePre:     "Due",
     lecture:    "Lecture",
-    discussion: "Discussion",
+    discussion: "Review & Assignment Help",
     assessment: "Assessment",
     due:        "Due"
   },
