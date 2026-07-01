@@ -36,7 +36,7 @@ const SCHEDULE = {
     materials:  "Pre-lecture materials",
     duePre:     "Due",
     lecture:    "Lecture",
-    discussion: "Review & Assignment Help",
+    discussion: "Discussion",
     assessment: "Assessment",
     due:        "Due"
   },
@@ -47,7 +47,7 @@ const SCHEDULE = {
         { weekday: "Mon", date: "Jun 29", lanes: {
           duePre:     [{ text: "Pre-course survey" }],
           lecture:    [{ text: "Intro & Syllabus", href: "../slides/lecture-jun29.pdf" }],
-          discussion: [{ text: "Setup" }, { text: "Study tips" }]
+          discussion: [{ text: "Review & Assignment Help" }]
         }},
         { weekday: "Tue", date: "Jun 30", lanes: {
           materials:  [
@@ -66,7 +66,7 @@ const SCHEDULE = {
           ],
           duePre:     [{ text: "Pre-lecture HW due" }],
           lecture:    [{ text: "Backpropagation" }],
-          discussion: [{ text: "Review" }, { text: "Practice oral assessment" }],
+          discussion: [{ text: "Review & Assignment Help" }],
           due:        [{ text: "A0 due" }]
         }},
         { weekday: "Thu", date: "Jul 2", lanes: {
@@ -88,7 +88,7 @@ const SCHEDULE = {
           ],
           duePre:     [{ text: "Pre-lecture HW due" }],
           lecture:    [{ text: "Review backprop" }, { text: "Autograd" }, { text: "CNN" }],
-          discussion: [{ text: "Review Thurs & Mon content" }],
+          discussion: [{ text: "Review & Assignment Help" }],
           due:        [{ text: "Project Proposal Due" }]
         }},
         { weekday: "Tue", date: "Jul 7", lanes: {
@@ -104,7 +104,7 @@ const SCHEDULE = {
           materials:  [{ text: "Review" }],
           duePre:     [{ text: "Pre-lecture HW due" }],
           lecture:    [{ text: "Adam" }, { text: "Autograd" }],
-          discussion: [{ text: "Review" }, { text: "Practice oral assessment" }],
+          discussion: [{ text: "Review & Assignment Help" }],
           due:        [{ text: "A1 due" }]
         }},
         { weekday: "Thu", date: "Jul 9", lanes: {
@@ -128,7 +128,7 @@ const SCHEDULE = {
           ],
           duePre:     [{ text: "Pre-lecture HW due" }],
           lecture:    [{ text: "Midterm Revision" }, { text: "RNN" }, { text: "LSTMs" }],
-          discussion: [{ text: "Review Exam 1" }],
+          discussion: [{ text: "Review & Assignment Help" }],
           assessment: [{ text: "Retake Exam 1 CBTF Day 1 option" }],
           due:        [{ text: "Project Proposal Updates/Revisions Due" }]
         }},
@@ -144,7 +144,7 @@ const SCHEDULE = {
           materials:  [{ text: "3b1b Attention", href: YT + "eMlx5fFNoYc" }],
           duePre:     [{ text: "Pre-lecture HW due" }],
           lecture:    [{ text: "Attention" }],
-          discussion: [{ text: "Review" }, { text: "Project check in" }, { text: "Practice oral assessment" }],
+          discussion: [{ text: "Review & Assignment Help" }],
           due:        [{ text: "A2 due" }]
         }},
         { weekday: "Thu", date: "Jul 16", lanes: {
@@ -163,7 +163,7 @@ const SCHEDULE = {
           materials:  [{ text: "A reading and/or video to prepare for Jay's talk!" }],
           duePre:     [{ text: "Pre-lecture HW due" }],
           lecture:    [{ text: "Guest lecture from Jay McClelland" }],
-          discussion: [{ text: "Review" }],
+          discussion: [{ text: "Review & Assignment Help" }],
           due:        [{ text: "Project Checkpoint Due" }]
         }},
         { weekday: "Tue", date: "Jul 21", lanes: {
@@ -178,7 +178,7 @@ const SCHEDULE = {
           materials:  [{ text: "A reading and/or video to prepare for Gary's talk!" }],
           duePre:     [{ text: "Pre-lecture HW due" }],
           lecture:    [{ text: "Guest lecture from Gary Cottrell" }],
-          discussion: [{ text: "Review" }, { text: "Project check in" }, { text: "Practice oral assessment" }],
+          discussion: [{ text: "Review & Assignment Help" }],
           due:        [{ text: "A3 due" }]
         }},
         { weekday: "Thu", date: "Jul 23", lanes: {
@@ -197,7 +197,7 @@ const SCHEDULE = {
           // materials: "None" dropped — lane renders em-dash
           duePre:     [{ text: "Pre-lecture HW due" }],
           lecture:    [{ text: "Presentations" }, { text: "Review" }],
-          discussion: [{ text: "Review" }],
+          discussion: [{ text: "Review & Assignment Help" }],
           assessment: [{ text: "Exam 2 CBTF Day 1 option" }]
         }},
         { weekday: "Tue", date: "Jul 28", lanes: {
@@ -210,7 +210,7 @@ const SCHEDULE = {
           // materials: "None" dropped — lane renders em-dash
           duePre:     [{ text: "Pre-lecture HW due" }],
           lecture:    [{ text: "Presentations" }, { text: "Career & Networking" }],
-          discussion: [{ text: "Topics of interest" }, { text: "Career & networking" }],
+          discussion: [{ text: "Review & Assignment Help" }],
           assessment: [{ text: "Retake Exam 2 CBTF Day 1 option" }],
           due:        [{ text: "Weds night: Project Writeups Due" }]
         }},
