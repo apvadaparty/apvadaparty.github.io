@@ -65,7 +65,7 @@ const SCHEDULE = {
             { text: "StatQuest: Ch 2" }
           ],
           duePre:     [{ text: "Pre-lecture HW due" }],
-          lecture:    [{ text: "Backpropagation" }],
+          lecture:    [{ text: "Backpropagation", href: "../slides/lecture-jul1.pdf" }],
           discussion: [{ text: "Review & Assignment Help", href: "../slides/CSE 151B 7_1 Discussion.pdf" }],
           due:        [{ text: "A0 due" }]
         }},
