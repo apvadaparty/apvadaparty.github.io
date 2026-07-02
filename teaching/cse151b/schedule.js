@@ -47,7 +47,7 @@ const SCHEDULE = {
         { weekday: "Mon", date: "Jun 29", lanes: {
           duePre:     [{ text: "Pre-course survey", href: "https://docs.google.com/forms/d/e/1FAIpQLSe0fB7FNvCx_csA1Mfte1YOLdZ70Ovp38lHhc8BTh_6qe_0Kg/viewform?usp=sharing&ouid=101126374470583356575" }],
           lecture:    [{ text: "Intro & Syllabus", href: "../slides/lecture-jun29.pdf" }],
-          discussion: [{ text: "Review & Assignment Help" }]
+          discussion: [{ text: "Review & Assignment Help", href: "../slides/CSE 151B 6_29 Discussion.pdf" }]
         }},
         { weekday: "Tue", date: "Jun 30", lanes: {
           materials:  [
@@ -66,7 +66,7 @@ const SCHEDULE = {
           ],
           duePre:     [{ text: "Pre-lecture HW due" }],
           lecture:    [{ text: "Backpropagation" }],
-          discussion: [{ text: "Review & Assignment Help" }],
+          discussion: [{ text: "Review & Assignment Help", href: "../slides/CSE 151B 7_1 Discussion.pdf" }],
           due:        [{ text: "A0 due" }]
         }},
         { weekday: "Thu", date: "Jul 2", lanes: {
