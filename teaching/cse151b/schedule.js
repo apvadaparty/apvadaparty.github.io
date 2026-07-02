@@ -45,7 +45,7 @@ const SCHEDULE = {
       label: "Week 1", topic: "MLPs", range: "Jun 29 \u2013 Jul 3",
       days: [
         { weekday: "Mon", date: "Jun 29", lanes: {
-          duePre:     [{ text: "Pre-course survey" }],
+          duePre:     [{ text: "Pre-course survey", href: "https://docs.google.com/forms/d/e/1FAIpQLSe0fB7FNvCx_csA1Mfte1YOLdZ70Ovp38lHhc8BTh_6qe_0Kg/viewform?usp=sharing&ouid=101126374470583356575" }],
           lecture:    [{ text: "Intro & Syllabus", href: "../slides/lecture-jun29.pdf" }],
           discussion: [{ text: "Review & Assignment Help" }]
         }},
