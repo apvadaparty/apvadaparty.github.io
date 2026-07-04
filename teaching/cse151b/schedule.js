@@ -85,7 +85,7 @@ const SCHEDULE = {
           materials:  [
             { text: "StatQuest CNNs",                   href: YT + "HGwBXDKFk9I" },
             { text: "(and/or StatQuest Book Ch: 6)" },
-            { text: "Finish 224N PyTorch colab tutorial" }
+            { text: "Finish 224N PyTorch colab tutorial", href: "https://colab.research.google.com/drive/1AiBuEL_V9u16jGMctpYN3Byx76_iFck_?usp=sharing#scrollTo=H6oqGiIXvrMl" }
           ],
           duePre:     [{ text: "Pre-lecture HW due" }],
           lecture:    [{ text: "Review backprop" }, { text: "Autograd" }, { text: "CNN" }],

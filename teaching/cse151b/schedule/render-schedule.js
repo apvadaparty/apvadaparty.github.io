@@ -2,6 +2,7 @@
 (function () {
   var ICONS = {
     materials:  '<svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>',
+    video:      '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="10,8 17,12 10,16"/></svg>',
     people:     '<svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><path d="M16 6.5a3 3 0 0 1 0 6"/><path d="M19.5 19c0-2-1-3.6-2.8-4.4"/></svg>',
     assessment: '<svg viewBox="0 0 24 24"><rect x="6" y="4.5" width="12" height="15.5" rx="2"/><path d="M9 4.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1V6H9z"/><path d="M9 13l2 2 4-4.5"/></svg>',
     check:      '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>'
@@ -28,7 +29,12 @@
   function itemNode(item, laneKey) {
     var node = item.href ? elem("a", "sch-i") : elem("span", "sch-i");
     if (item.href) node.href = item.href;
-    node.appendChild(iconSpan(laneKey));
+    var isVideo = laneKey === "materials" && item.href && item.href.indexOf("youtube.com") !== -1;
+    var iconKey = isVideo ? "video" : LANE_ICON[laneKey];
+    var s = elem("span", "sch-ic-wrap");
+    s.setAttribute("aria-hidden", "true");
+    s.innerHTML = ICONS[iconKey] || "";
+    node.appendChild(s);
     node.appendChild(document.createTextNode(item.text)); // user content as text, never HTML
     return node;
   }
