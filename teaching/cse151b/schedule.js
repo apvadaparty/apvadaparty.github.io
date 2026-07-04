@@ -53,7 +53,7 @@ const SCHEDULE = {
           materials:  [
             { text: "3b1b MLPs",             href: YT + "aircAruvnKk" },
             { text: "3b1b Gradient Descent", href: YT + "IHZwWFHWa-w" },
-            { text: "StatQuest: Ch 1, 3" }
+            { text: "StatQuest Book: Ch 1, 3" }
           ],
           duePre:     [{ text: "Pre-lecture HW due" }],
           lecture:    [{ text: "Neural Networks and Computation Graphs", href: "../slides/lecture-jun30.pdf" }]
@@ -62,7 +62,7 @@ const SCHEDULE = {
           materials:  [
             { text: "3b1b Backpropagation, intuitively", href: YT + "Ilg3gGewQ5U" },
             { text: "3b1b Backpropagation calculus",     href: YT + "tIeHLnjs5U8" },
-            { text: "StatQuest: Ch 2" }
+            { text: "StatQuest Book: Ch 2" }
           ],
           duePre:     [{ text: "Pre-lecture HW due" }],
           lecture:    [{ text: "Backpropagation", href: "../slides/lecture-jul1.pdf" }],
@@ -84,6 +84,7 @@ const SCHEDULE = {
         { weekday: "Mon", date: "Jul 6", lanes: {
           materials:  [
             { text: "StatQuest CNNs",                   href: YT + "HGwBXDKFk9I" },
+            { text: "(and/or StatQuest Book Ch: 6)" },
             { text: "Finish 224N PyTorch colab tutorial" }
           ],
           duePre:     [{ text: "Pre-lecture HW due" }],
