@@ -102,7 +102,10 @@ const SCHEDULE = {
           lecture:    [{ text: "CNN" }, { text: "Optimization" }]
         }},
         { weekday: "Wed", date: "Jul 8", lanes: {
-          materials:  [{ text: "Review" }],
+          materials:  [
+            { text: "StatQuest Book: Ch 5" },
+            { text: "StatQuest MLE", href: "https://www.youtube.com/watch?v=XepXtl9YKwc" }
+          ],
           duePre:     [{ text: "Pre-lecture HW due" }],
           lecture:    [{ text: "Adam" }, { text: "Autograd" }],
           discussion: [{ text: "Review & Assignment Help" }],
