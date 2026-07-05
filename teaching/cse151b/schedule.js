@@ -99,7 +99,7 @@ const SCHEDULE = {
             { text: "DeepLearningAI Why BatchNorm", href: YT + "nUUqwaxLnWs" }
           ],
           duePre:     [{ text: "Pre-lecture HW due" }],
-          lecture:    [{ text: "CNN" }, { text: "Optimization" }]
+          lecture:    [{ text: "CNN" }, { text: "Optimization" }, { text: "Improving Generalization", href: "../slides/Gary_Cottrell_improving_generalization-2024.pdf" }, { text: "Tricks of the Trade", href: "../slides/Gary_Cottrell_Tricks_of_the_trade.pdf" }]
         }},
         { weekday: "Wed", date: "Jul 8", lanes: {
           materials:  [
