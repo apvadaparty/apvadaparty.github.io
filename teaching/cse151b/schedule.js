@@ -88,7 +88,7 @@ const SCHEDULE = {
             { text: "Finish 224N PyTorch colab tutorial", href: "https://colab.research.google.com/drive/1AiBuEL_V9u16jGMctpYN3Byx76_iFck_?usp=sharing#scrollTo=H6oqGiIXvrMl" }
           ],
           duePre:     [{ text: "Pre-lecture HW due" }],
-          lecture:    [{ text: "Review backprop" }, { text: "CNN" }],
+          lecture:    [{ text: "CNN", href: "../slides/lecture-jul6.pdf" }],
           discussion: [{ text: "Review & Assignment Help" }],
           due:        [{ text: "Project Proposal Due" }]
         }},
