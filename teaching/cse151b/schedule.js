@@ -99,7 +99,7 @@ const SCHEDULE = {
             { text: "DeepLearningAI Why BatchNorm", href: YT + "nUUqwaxLnWs" }
           ],
           duePre:     [{ text: "Pre-lecture HW due" }],
-          lecture:    [{ text: "CNN" }, { text: "Optimization" }, { text: "Improving Generalization", href: "../slides/Gary_Cottrell_improving_generalization-2024.pdf" }, { text: "Tricks of the Trade", href: "../slides/Gary_Cottrell_Tricks_of_the_trade.pdf" }]
+          lecture:    [{ text: "Improving Generalization", href: "../slides/Lecture 5 Jul 7.pdf" }, { text: "More about Improving Generalization", href: "../slides/Gary_Cottrell_improving_generalization-2024.pdf" }]
         }},
         { weekday: "Wed", date: "Jul 8", lanes: {
           materials:  [
@@ -107,7 +107,7 @@ const SCHEDULE = {
             { text: "StatQuest MLE", href: "https://www.youtube.com/watch?v=XepXtl9YKwc" }
           ],
           duePre:     [{ text: "Pre-lecture HW due" }],
-          lecture:    [{ text: "Adam" }, { text: "Autograd" }],
+          lecture:    [{ text: "Tricks of the Trade", href: "../slides/Lecture 6 Jul 8.pdf" }, { text: "More about Tricks of the Trade", href: "../slides/Gary_Cottrell_Tricks_of_the_trade.pdf" }],
           discussion: [{ text: "Review & Assignment Help" }],
           due:        [{ text: "A1 due" }]
         }},
