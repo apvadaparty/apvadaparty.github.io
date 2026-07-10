@@ -56,7 +56,8 @@ const SCHEDULE = {
             { text: "StatQuest Book: Ch 1, 3" }
           ],
           duePre:     [{ text: "Pre-lecture HW due" }],
-          lecture:    [{ text: "Neural Networks and Computation Graphs", href: "../slides/lecture-jun30.pdf" }]
+          lecture:    [{ text: "Neural Networks and Computation Graphs", href: "../slides/lecture-jun30.pdf" }],
+          due:        [{ text: "Oral Assessment Sign Ups", href: "https://piazza.com/class/mq7cvtfat4t3ff/post/15" }]
         }},
         { weekday: "Wed", date: "Jul 1", lanes: {
           materials:  [
@@ -99,7 +100,8 @@ const SCHEDULE = {
             { text: "DeepLearningAI Why BatchNorm", href: YT + "nUUqwaxLnWs" }
           ],
           duePre:     [{ text: "Pre-lecture HW due" }],
-          lecture:    [{ text: "Improving Generalization", href: "../slides/Lecture 5 Jul 7.pdf" }, { text: "More about Improving Generalization", href: "../slides/Gary_Cottrell_improving_generalization-2024.pdf" }]
+          lecture:    [{ text: "Improving Generalization", href: "../slides/Lecture 5 Jul 7.pdf" }, { text: "More about Improving Generalization", href: "../slides/Gary_Cottrell_improving_generalization-2024.pdf" }],
+          due:        [{ text: "Oral Assessment Sign Ups", href: "https://piazza.com/class/mq7cvtfat4t3ff/post/15" }]
         }},
         { weekday: "Wed", date: "Jul 8", lanes: {
           materials:  [
@@ -142,7 +144,8 @@ const SCHEDULE = {
           ],
           duePre:     [{ text: "Mid quarter survey" }, { text: "Pre-lecture HW due" }],
           lecture:    [{ text: "Transformers" }],
-          assessment: [{ text: "Retake Exam 1 CBTF Day 2 option" }]
+          assessment: [{ text: "Retake Exam 1 CBTF Day 2 option" }],
+          due:        [{ text: "Oral Assessment Sign Ups", href: "https://piazza.com/class/mq7cvtfat4t3ff/post/15" }]
         }},
         { weekday: "Wed", date: "Jul 15", lanes: {
           materials:  [{ text: "3b1b Attention", href: YT + "eMlx5fFNoYc" }],
@@ -176,7 +179,8 @@ const SCHEDULE = {
             { text: "StatQuest RLHF", href: YT + "qPN_XZcJf_s" }
           ],
           duePre:     [{ text: "Pre-lecture HW due" }],
-          lecture:    [{ text: "Differences between previous transformers & LLMs" }]
+          lecture:    [{ text: "Differences between previous transformers & LLMs" }],
+          due:        [{ text: "Oral Assessment Sign Ups", href: "https://piazza.com/class/mq7cvtfat4t3ff/post/15" }]
         }},
         { weekday: "Wed", date: "Jul 22", lanes: {
           materials:  [{ text: "A reading and/or video to prepare for Gary's talk!" }],
