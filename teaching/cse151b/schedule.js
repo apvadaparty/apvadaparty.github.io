@@ -129,17 +129,19 @@ const SCHEDULE = {
         { weekday: "Mon", date: "Jul 13", lanes: {
           materials:  [
             { text: "StatQuest RNNs", href: YT + "AsNTP8Kwu80" },
-            { text: "RNN, optimization" },
-            { text: "LSTMs" }
+            { text: "(and/or StatQuest Book Ch: 7)" },
+            { text: "StatQuest LSTMs", href: "https://www.youtube.com/watch?v=YCzL96nL7j0" },
+            { text: "(and/or StatQuest Book Ch: 8)" }
           ],
           duePre:     [{ text: "Pre-lecture HW due" }],
-          lecture:    [{ text: "Midterm Revision" }, { text: "RNN" }, { text: "LSTMs" }],
+          lecture:    [{ text: "RNN" }, { text: "LSTMs" }],
           discussion: [{ text: "Review & Assignment Help" }],
           assessment: [{ text: "Retake Exam 1 CBTF Day 1 option" }],
           due:        [{ text: "Project Proposal Updates/Revisions Due" }]
         }},
         { weekday: "Tue", date: "Jul 14", lanes: {
           materials:  [
+            { text: "StatQuest Book Ch: 9" },
             { text: "3b1b Transformers", href: YT + "wjZofJX0v4M" }
           ],
           duePre:     [{ text: "Mid quarter survey" }, { text: "Pre-lecture HW due" }],
