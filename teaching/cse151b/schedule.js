@@ -134,7 +134,7 @@ const SCHEDULE = {
             { text: "(and/or StatQuest Book Ch: 8)" }
           ],
           duePre:     [{ text: "Pre-lecture HW due" }],
-          lecture:    [{ text: "RNN" }, { text: "LSTMs" }],
+          lecture:    [{ text: "RNNs and LSTMs", href: "../slides/Lecture 8 Jul 13 RNNs LSTMs.pdf" }],
           discussion: [{ text: "Review & Assignment Help" }],
           assessment: [{ text: "Retake Exam 1 CBTF Day 1 option" }],
           due:        [{ text: "Project Proposal Updates/Revisions Due" }]
