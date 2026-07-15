@@ -145,7 +145,7 @@ const SCHEDULE = {
             { text: "3b1b Transformers", href: YT + "wjZofJX0v4M" }
           ],
           duePre:     [{ text: "Mid quarter survey" }, { text: "Pre-lecture HW due" }],
-          lecture:    [{ text: "Transformers" }],
+          lecture:    [{ text: "Language and Transformers", href: "/teaching/cse151b/slides/Lecture 9 Jul 14 Language and Transformers.pdf" }],
           assessment: [{ text: "Retake Exam 1 CBTF Day 2 option" }],
           due:        [{ text: "Oral Assessment Sign Ups", href: "https://piazza.com/class/mq7cvtfat4t3ff/post/15" }]
         }},
