@@ -152,7 +152,7 @@ const SCHEDULE = {
         { weekday: "Wed", date: "Jul 15", lanes: {
           materials:  [{ text: "3b1b Attention", href: YT + "eMlx5fFNoYc" }],
           duePre:     [{ text: "Pre-lecture HW due" }],
-          lecture:    [{ text: "Attention" }],
+          lecture:    [{ text: "Attention", href: "/teaching/cse151b/slides/Lecture 10 Jul 15 Attention.pdf" }],
           discussion: [{ text: "Review & Assignment Help" }],
           due:        [{ text: "A2 due" }]
         }},
