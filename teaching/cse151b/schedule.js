@@ -169,7 +169,7 @@ const SCHEDULE = {
       label: "Week 4", topic: "Applications: Cognition, GenAI", range: "Jul 20 \u2013 Jul 24",
       days: [
         { weekday: "Mon", date: "Jul 20", lanes: {
-          materials:  [{ text: "A reading and/or video to prepare for Jay's talk!" }],
+          materials:  [{ text: "Reading and post to prepare for Jay's talk", href: "https://piazza.com/class/mq7cvtfat4t3ff/post/124" }],
           duePre:     [{ text: "Pre-lecture HW due" }],
           lecture:    [{ text: "Guest lecture from Jay McClelland" }],
           discussion: [{ text: "Review & Assignment Help" }],
@@ -185,8 +185,8 @@ const SCHEDULE = {
           due:        [{ text: "Oral Assessment Sign Ups", href: "https://piazza.com/class/mq7cvtfat4t3ff/post/15" }]
         }},
         { weekday: "Wed", date: "Jul 22", lanes: {
-          materials:  [{ text: "A reading and/or video to prepare for Gary's talk!" }],
-          duePre:     [{ text: "Pre-lecture HW due" }],
+          materials:  [{ text: "None" }],
+          duePre:     [{ text: "None" }],
           lecture:    [{ text: "Guest lecture from Gary Cottrell" }],
           discussion: [{ text: "Review & Assignment Help" }],
           due:        [{ text: "A3 due" }]
