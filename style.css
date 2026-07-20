@@ -245,6 +245,7 @@ details summary::-webkit-details-marker { display: none; }
 details summary h2 { display: inline; }
 details summary::before { content: '▶\00a0'; font-size: .8em; color: var(--accent); }
 details[open] summary::before { content: '▼\00a0'; }
+details[open] summary { margin-bottom: .5rem; }
 
 /* ---- TBD placeholder (visibly marked) ---- */
 .tbd {
