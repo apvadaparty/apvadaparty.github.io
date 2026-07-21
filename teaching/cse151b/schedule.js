@@ -181,7 +181,7 @@ const SCHEDULE = {
             { text: "StatQuest RLHF", href: YT + "qPN_XZcJf_s" }
           ],
           duePre:     [{ text: "Pre-lecture HW due" }],
-          lecture:    [{ text: "Differences between previous transformers & LLMs" }],
+          lecture:    [{ text: "RLHF", href: "/teaching/cse151b/slides/CSE 151B Jul 21 Lecture.pdf" }],
           due:        [{ text: "Oral Assessment Sign Ups", href: "https://piazza.com/class/mq7cvtfat4t3ff/post/15" }]
         }},
         { weekday: "Wed", date: "Jul 22", lanes: {
