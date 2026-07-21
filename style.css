@@ -239,7 +239,7 @@ li { margin: .2rem 0; }
 
 /* ---- two-track split layout ---- */
 .track-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2rem; margin: .75rem 0 1rem; }
-.track-cols .track h3 { font-size: 1rem; margin: 0 0 .4rem; }
+.track-cols .track h3 { font-size: 1.15rem; margin: 0 0 .4rem; }
 .track-cols .track { border-top: 2px solid var(--accent); padding-top: .6rem; }
 @media (max-width: 640px) { .track-cols { grid-template-columns: 1fr; } }
 
