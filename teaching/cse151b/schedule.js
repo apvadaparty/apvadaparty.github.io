@@ -187,7 +187,7 @@ const SCHEDULE = {
         { weekday: "Wed", date: "Jul 22", lanes: {
           materials:  [{ text: "None" }],
           duePre:     [{ text: "None" }],
-          lecture:    [{ text: "Guest lecture from Gary Cottrell" }],
+          lecture:    [{ text: "Career Panel Planning and Guest Lecture from Gary Cottrell", href: "/teaching/cse151b/slides/CSE 151B Jul 22 Lecture.pdf" }],
           discussion: [{ text: "Review & Assignment Help" }],
           due:        [{ text: "A3 due" }]
         }},
