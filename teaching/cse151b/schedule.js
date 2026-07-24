@@ -204,34 +204,29 @@ const SCHEDULE = {
       label: "Week 5", topic: "Exam and Project", range: "Jul 27 \u2013 Jul 31",
       days: [
         { weekday: "Mon", date: "Jul 27", lanes: {
-          // materials: "None" dropped — lane renders em-dash
           duePre:     [{ text: "Pre-lecture HW due" }],
-          lecture:    [{ text: "Presentations" }, { text: "Review" }],
+          lecture:    [{ text: "Industry & Academia Career Panel" }],
           discussion: [{ text: "Review & Assignment Help" }],
           assessment: [{ text: "Exam 2 CBTF Day 1 option" }]
         }},
         { weekday: "Tue", date: "Jul 28", lanes: {
-          // materials: "None" dropped — lane renders em-dash
           duePre:     [{ text: "Pre-lecture HW due" }],
-          lecture:    [{ text: "Presentations" }, { text: "Review" }],
+          lecture:    [{ text: "Project Presentations" }],
           assessment: [{ text: "Exam 2 CBTF Day 2 option" }]
         }},
         { weekday: "Wed", date: "Jul 29", lanes: {
-          // materials: "None" dropped — lane renders em-dash
           duePre:     [{ text: "Pre-lecture HW due" }],
-          lecture:    [{ text: "Presentations" }, { text: "Career & Networking" }],
+          lecture:    [{ text: "Project Presentations" }],
           discussion: [{ text: "Review & Assignment Help" }],
           assessment: [{ text: "Retake Exam 2 CBTF Day 1 option" }],
-          due:        [{ text: "Weds night: Project Writeups Due" }]
+          due:        [{ text: "Project Writeups Due" }, { text: "Project Artifacts Due" }]
         }},
         { weekday: "Thu", date: "Jul 30", lanes: {
           materials:  [{ text: "End quarter survey" }],
-          // no duePre — Week 5 Thursday exception (end-of-quarter, no pre-work)
-          lecture:    [{ text: "Topics of interest" }, { text: "Career & Networking" }],
+          lecture:    [{ text: "Project Presentations" }],
           assessment: [{ text: "Retake Exam 2 CBTF Day 2 option" }]
         }},
         { weekday: "Fri", date: "Jul 31", lanes: {
-          assessment: [{ text: "Presentations: 11:30am \u2013 2:30pm" }]
         }}
       ]
     }
