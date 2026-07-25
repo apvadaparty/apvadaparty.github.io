@@ -65,7 +65,7 @@ body {
 .wrap--wide { max-width: 70rem; }   /* schedule page needs room */
 
 /* homepage: identity panel on the left, prose on the right */
-.home {
+main.home {
   max-width: 58rem;
   display: grid;
   grid-template-columns: 16rem 1fr;
@@ -96,7 +96,7 @@ body {
   margin: 0 auto 1.1rem;
 }
 @media (max-width: 700px) {
-  .home {
+  main.home {
     grid-template-columns: 1fr;
     gap: 1.25rem;
     max-width: var(--maxw);
