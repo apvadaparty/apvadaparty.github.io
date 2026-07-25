@@ -130,6 +130,7 @@ body {
 }
 .topnav .site-name:hover,
 .topnav .site-name:focus { color: var(--accent); }
+body.home .topnav .site-name { display: none; }
 .topnav ul {
   list-style: none;
   display: flex;
