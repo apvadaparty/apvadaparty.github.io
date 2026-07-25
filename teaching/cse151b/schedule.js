@@ -185,8 +185,6 @@ const SCHEDULE = {
           due:        [{ text: "Oral Assessment Sign Ups", href: "https://piazza.com/class/mq7cvtfat4t3ff/post/15" }]
         }},
         { weekday: "Wed", date: "Jul 22", lanes: {
-          materials:  [{ text: "None" }],
-          duePre:     [{ text: "None" }],
           lecture:    [{ text: "Career Panel Planning and Guest Lecture from Gary Cottrell", href: "/teaching/cse151b/slides/CSE 151B Jul 22 Lecture.pdf" }],
           discussion: [{ text: "Review & Assignment Help" }],
           due:        [{ text: "A3 due" }]
@@ -204,25 +202,23 @@ const SCHEDULE = {
       label: "Week 5", topic: "Exam and Project", range: "Jul 27 \u2013 Jul 31",
       days: [
         { weekday: "Mon", date: "Jul 27", lanes: {
-          duePre:     [{ text: "Pre-lecture HW due" }],
           lecture:    [{ text: "Industry & Academia Career Panel" }],
           discussion: [{ text: "Review & Assignment Help" }],
           assessment: [{ text: "Exam 2 CBTF Day 1 option" }]
         }},
         { weekday: "Tue", date: "Jul 28", lanes: {
-          duePre:     [{ text: "Pre-lecture HW due" }],
+          duePre:     [{ text: "Work on SETs" }],
           lecture:    [{ text: "Project Presentations" }],
           assessment: [{ text: "Exam 2 CBTF Day 2 option" }]
         }},
         { weekday: "Wed", date: "Jul 29", lanes: {
-          duePre:     [{ text: "Pre-lecture HW due" }],
+          duePre:     [{ text: "Work on SETs" }],
           lecture:    [{ text: "Project Presentations" }],
           discussion: [{ text: "Review & Assignment Help" }],
           assessment: [{ text: "Retake Exam 2 CBTF Day 1 option" }],
           due:        [{ text: "Project Writeups Due" }, { text: "Project Artifacts Due" }]
         }},
         { weekday: "Thu", date: "Jul 30", lanes: {
-          materials:  [{ text: "End quarter survey" }],
           lecture:    [{ text: "Project Presentations" }],
           assessment: [{ text: "Retake Exam 2 CBTF Day 2 option" }]
         }},
