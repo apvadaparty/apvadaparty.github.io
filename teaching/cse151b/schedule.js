@@ -219,6 +219,7 @@ const SCHEDULE = {
           due:        [{ text: "Project Writeups Due" }, { text: "Project Artifacts Due" }]
         }},
         { weekday: "Thu", date: "Jul 30", lanes: {
+          duePre:     [{ text: "Work on SETs" }],
           lecture:    [{ text: "Project Presentations" }],
           assessment: [{ text: "Retake Exam 2 CBTF Day 2 option" }]
         }},
