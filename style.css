@@ -131,6 +131,7 @@ body {
 .topnav .site-name:hover,
 .topnav .site-name:focus { color: var(--accent); }
 body.home .topnav .site-name { display: none; }
+body.home .topnav ul { margin-left: auto; }
 .topnav ul {
   list-style: none;
   display: flex;
