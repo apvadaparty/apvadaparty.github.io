@@ -139,7 +139,7 @@ body.cse151b {
   --accent-dark: #472050;  /* deeper plum; ~10:1 on white */
   --accent-soft: #ece1ee;  /* light plum tint (reuses schedule due-bg) */
 }
-body.cse151b h1 { color: var(--accent); }
+body.cse151b h1, body.cse151b h2 { color: var(--accent); }
 .topnav ul {
   list-style: none;
   display: flex;
