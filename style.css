@@ -276,7 +276,11 @@ details summary .summary-preview { display: block; margin: .2rem 0 0; font-size:
 details[open] summary .summary-preview { display: none; }
 details summary .summary-img { display: block; max-width: 50%; margin-top: .75rem; margin-left: auto; margin-right: auto; }
 details[open] summary .summary-img--collapsed { display: none; }
-.img-caption { font-size: .9em; color: var(--muted); margin-top: .5rem; }
+.summary-img { display: block; max-width: 50%; margin-top: .75rem; margin-left: auto; margin-right: auto; }
+.img-caption { font-size: .9em; color: var(--muted); margin-top: .5rem; text-align: center; }
+@media (max-width: 600px) {
+  details summary .summary-img, .summary-img { max-width: 80%; }
+}
 
 /* ---- TBD placeholder (visibly marked) ---- */
 .tbd {
