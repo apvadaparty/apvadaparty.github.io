@@ -245,6 +245,17 @@ main p a, main li a, main dd a, main dt a {
   text-underline-offset: 2px;
 }
 
+/* ---- blockquote ---- */
+blockquote {
+  border-left: 4px solid var(--accent);
+  margin: 1.5rem 0;
+  padding: .5rem 0 .5rem 1.25rem;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--heading);
+}
+blockquote p { margin: 0; }
+
 /* ---- lists ---- */
 ul, ol { padding-left: 1.25rem; }
 li { margin: .2rem 0; }
