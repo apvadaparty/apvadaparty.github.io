@@ -277,7 +277,7 @@ details[open] summary .summary-preview { display: none; }
 details summary .summary-img { display: block; max-width: 50%; margin-top: .75rem; margin-left: auto; margin-right: auto; }
 details[open] summary .summary-img--collapsed { display: none; }
 .summary-img { display: block; max-width: 50%; margin-top: .75rem; margin-left: auto; margin-right: auto; }
-.img-caption { font-size: .9em; color: var(--muted); margin-top: .5rem; text-align: center; }
+.img-caption { font-size: .9em; color: var(--muted); margin-top: .5rem; text-align: justify; }
 @media (max-width: 600px) {
   details summary .summary-img, .summary-img { max-width: 80%; }
 }
