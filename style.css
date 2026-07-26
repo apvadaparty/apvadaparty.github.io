@@ -132,6 +132,13 @@ main.home {
 .topnav .site-name:focus { color: var(--accent); }
 body.home .topnav .site-name { display: none; }
 body.home .topnav ul { margin-left: auto; }
+
+/* CSE 151B course pages: purple accent to complement schedule plum tones */
+body.cse151b {
+  --accent:      #5f2c6b;  /* plum purple; 7.3:1 on white (AAA) */
+  --accent-dark: #472050;  /* deeper plum; ~10:1 on white */
+  --accent-soft: #ece1ee;  /* light plum tint (reuses schedule due-bg) */
+}
 .topnav ul {
   list-style: none;
   display: flex;
