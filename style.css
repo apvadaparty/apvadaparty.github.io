@@ -140,6 +140,15 @@ body.cse151b {
   --accent-soft: #ece1ee;  /* light plum tint (reuses schedule due-bg) */
 }
 body.cse151b h1, body.cse151b h2 { color: var(--accent); }
+
+/* Teaching Methods pages: dark forest green accent */
+body.teaching-methods {
+  --accent:      #1a5c38;  /* forest green; ~9:1 on off-white (AAA) */
+  --accent-dark: #134429;  /* deeper green; ~12:1 on off-white */
+  --accent-soft: #d6ede1;  /* pale green tint for hover backgrounds */
+}
+body.teaching-methods h1, body.teaching-methods h2 { color: var(--accent); }
+
 .topnav ul {
   list-style: none;
   display: flex;
