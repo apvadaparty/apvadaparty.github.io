@@ -199,7 +199,7 @@ const SCHEDULE = {
     },
 
     {
-      label: "Week 5", topic: "Exam and Project", range: "Jul 27 \u2013 Jul 31",
+      label: "Week 5", topic: "Project Presentations", range: "Jul 27 \u2013 Jul 31",
       days: [
         { weekday: "Mon", date: "Jul 27", lanes: {
           lecture:    [{ text: "Industry & Academia Career Panel" }],
