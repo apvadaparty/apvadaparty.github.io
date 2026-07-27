@@ -133,12 +133,13 @@ main.home {
   background: #3a5a40 url('/chalkboard_screenshot.png') center/cover no-repeat;
   border-bottom: 1px solid #9aa89a;
   padding: 20px 0;
-  min-height: 80px;
   position: sticky;
   top: 0;
   z-index: 100;
 }
-@media (min-width: 600px) { .masthead { padding: 25px 0; min-height: 90px; } }
+@media (min-width: 600px) { .masthead { padding: 25px 0; } }
+body.home .masthead { padding: 8px 0; }
+@media (min-width: 600px) { body.home .masthead { padding: 10px 0; } }
 .chalk-tray-deco {
   position: absolute;
   bottom: 0;
@@ -179,12 +180,12 @@ body.home .topnav ul { margin-left: auto; }
 
 /* chalk text image tagline (homepage only) */
 .home-tagline-img {
-  position: absolute;
-  bottom: 10px;
-  left: 65px;
+  margin-left: 65px;
+  margin-right: auto;
   height: 36px;
   width: auto;
   pointer-events: none;
+  display: block;
   -webkit-mask-image: linear-gradient(to right, white var(--chalk-reveal, 100%), transparent var(--chalk-reveal, 100%));
   mask-image: linear-gradient(to right, white var(--chalk-reveal, 100%), transparent var(--chalk-reveal, 100%));
 }
