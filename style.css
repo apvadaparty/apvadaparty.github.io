@@ -141,8 +141,9 @@ main.home {
 .chalk-tray-deco {
   position: absolute;
   bottom: 0;
-  left: 12px;
+  left: 20px;
   opacity: 0.9;
+  display: block;
 }
 .topnav {
   max-width: var(--maxw);   /* match the content column so the name lines up with the page h1 */
@@ -182,6 +183,11 @@ body.home .topnav ul { margin-left: auto; }
   width: auto;
   pointer-events: none;
   display: block;
+  -webkit-mask-image: linear-gradient(to right, white var(--chalk-reveal, 100%), transparent var(--chalk-reveal, 100%));
+  mask-image: linear-gradient(to right, white var(--chalk-reveal, 100%), transparent var(--chalk-reveal, 100%));
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-tagline-img { -webkit-mask-image: none; mask-image: none; }
 }
 
 /* Homepage: chalkboard green accent */
