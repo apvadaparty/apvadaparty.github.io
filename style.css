@@ -175,6 +175,7 @@ main.home {
   border-bottom: 2px solid #a8b8a8;
 }
 body.home .topnav .site-name { display: none; }
+body.home .topnav ul { margin-left: auto; }
 
 /* chalk text image tagline (homepage only) */
 .home-tagline-img {
