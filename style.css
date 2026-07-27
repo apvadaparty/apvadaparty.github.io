@@ -83,6 +83,31 @@ main.home {
 .profile h1 { margin-top: 0; }
 .profile .lead { font-size: 1rem; color: var(--muted); }
 .home-body > :first-child { margin-top: 0; }
+.profile-links {
+  list-style: none;
+  padding: 0;
+  margin: .75rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem 1rem;
+}
+.profile-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .85rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+.profile-links a:hover,
+.profile-links a:focus { color: var(--accent); }
+.profile-links svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+  flex-shrink: 0;
+}
 .headshot {
   display: block;
   width: 100%;
