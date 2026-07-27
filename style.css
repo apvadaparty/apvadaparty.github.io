@@ -16,9 +16,9 @@
   --band:        #f5f5f5;  /* header / table band    */
   --text:        #333333;  /* body text              */
   --heading:     #222222;  /* headings, nav          */
-  --accent:      #5f1a20;  /* maroon (replaces Ellis indigo); 12.7:1 on white */
-  --accent-dark: #4a1418;  /* visited / stronger; 15:1 on white */
-  --accent-soft: #e0c9ca;  /* link hover background (maroon text ≥8:1 on it) */
+  --accent:      #3a5a40;  /* chalkboard green; ~7:1 on off-white */
+  --accent-dark: #2a4430;  /* deeper green; ~10:1 on off-white */
+  --accent-soft: #d4e5d6;  /* pale green tint for hover backgrounds */
   --rule:        #eaeaea;  /* hairline borders        */
   --rule-soft:   #e5e5e5;  /* faint dividers          */
   --muted:       #595959;  /* footer / secondary; 7:1 on white (AAA) */
@@ -140,8 +140,9 @@ main.home {
 .masthead-texture {
   position: absolute;
   inset: 0;
+  background: white;
   filter: url(#chalk-texture);
-  opacity: 0.12;
+  opacity: 0.08;
   pointer-events: none;
   z-index: 0;
 }
@@ -167,7 +168,8 @@ main.home {
 }
 .topnav .site-name:hover,
 .topnav .site-name:focus { color: #c8dfc8; }
-.topnav a { color: #ffffff !important; }
+.topnav a { color: #ffffff !important; text-decoration-color: #ffffff !important; }
+.topnav a:visited { color: #ffffff !important; text-decoration-color: #ffffff !important; }
 .topnav a:hover,
 .topnav a:focus { color: #c8dfc8 !important; background: transparent; }
 .topnav a[aria-current="page"] {
@@ -184,7 +186,7 @@ body.home .topnav ul { margin-left: auto; }
   pointer-events: none;
 }
 .home-tagline-svg text {
-  font-family: 'Homemade Apple', cursive;
+  font-family: 'Oooh Baby', cursive;
   font-size: 26px;
   font-weight: 600;
   fill: none;
