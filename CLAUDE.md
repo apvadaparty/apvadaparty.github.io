@@ -49,8 +49,7 @@ and minimalist — not shiny. No emojis-as-decoration, no fancy buttons.
 
 **Current realization of the palette/type (keep consistent unless asked to change):**
 - Background: **soft off-white `#fafaf7`**; header/table band `#f5f5f5`.
-- One accent: **maroon `#5f1a20`** (with `#4a1418` for stronger/visited). No second
-  accent. No purple/indigo.
+- Main accent: **maroon `#5f1a20`** (with `#4a1418` for stronger/visited). Minimal number of accent colors. 
 - Type: **Montserrat** for body, **Lato** for headings/nav/footer (deliberate pairing,
   loaded from Google Fonts).
 - Greys for secondary text are contrast-checked: `--muted #595959` (7:1, AAA),
