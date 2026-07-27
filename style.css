@@ -182,7 +182,7 @@ body.home .topnav ul { margin-left: auto; }
 .home-tagline-img {
   margin-left: 65px;
   margin-right: auto;
-  margin-bottom: 6px;
+  margin-top: -6px;
   height: 36px;
   width: auto;
   pointer-events: none;
