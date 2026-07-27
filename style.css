@@ -138,8 +138,6 @@ main.home {
   z-index: 100;
 }
 @media (min-width: 600px) { .masthead { padding: 25px 0; } }
-body.home .masthead { padding: 8px 0; }
-@media (min-width: 600px) { body.home .masthead { padding: 10px 0; } }
 .chalk-tray-deco {
   position: absolute;
   bottom: 0;
@@ -180,13 +178,12 @@ body.home .topnav ul { margin-left: auto; }
 
 /* chalk text image tagline (homepage only) */
 .home-tagline-img {
-  margin-left: 65px;
-  margin-right: auto;
-  margin-top: -6px;
-  height: 36px;
+  position: absolute;
+  bottom: 8px;
+  left: 80px;
+  height: 30px;
   width: auto;
   pointer-events: none;
-  display: block;
   -webkit-mask-image: linear-gradient(to right, white var(--chalk-reveal, 100%), transparent var(--chalk-reveal, 100%));
   mask-image: linear-gradient(to right, white var(--chalk-reveal, 100%), transparent var(--chalk-reveal, 100%));
 }
