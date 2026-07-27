@@ -178,14 +178,18 @@ body.home .topnav ul { margin-left: auto; }
 
 /* chalk text image tagline (homepage only) */
 .home-tagline-img {
-  position: absolute;
-  bottom: 22px;
-  left: 80px;
-  height: 30px;
+  display: block;
+  max-width: var(--maxw);
+  margin: 6px auto 0;
+  padding: 0 15px;
+  height: 45px;
   width: auto;
   pointer-events: none;
   -webkit-mask-image: linear-gradient(to right, white var(--chalk-reveal, 100%), transparent var(--chalk-reveal, 100%));
   mask-image: linear-gradient(to right, white var(--chalk-reveal, 100%), transparent var(--chalk-reveal, 100%));
+}
+@media (max-width: 599px) {
+  .home-tagline-img { height: 28px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .home-tagline-img { -webkit-mask-image: none; mask-image: none; }
