@@ -6,7 +6,6 @@
 <title>Annapurna Vadaparty</title>
 <meta name="description" content="Annapurna Vadaparty — PhD candidate studying human-computer interaction and computer science education at UC San Diego.">
 <link rel="stylesheet" href="/style.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap">
 </head>
 <body class="home">
 <a class="skip" href="#main">Skip to content</a>
@@ -15,9 +14,7 @@
 <!-- NAV:START — keep identical across all pages (only aria-current differs per page) -->
 <nav class="topnav" aria-label="Primary">
   <a class="site-name" href="/">Annapurna Vadaparty</a>
-  <svg class="home-tagline-svg" height="36" aria-label="Bringing learning sciences to the classroom.">
-    <text x="0" y="28">Bringing learning sciences to the classroom.</text>
-  </svg>
+  <img class="home-tagline-img" src="/chalktext.png" alt="Bringing learning sciences to the classroom.">
   <ul>
     <li><a href="/" aria-current="page">Home</a></li>
     <li><a href="/research/">Research</a></li>
@@ -27,11 +24,16 @@
 </nav>
 <!-- NAV:END -->
 <!-- chalk tray decorations -->
-<svg class="chalk-tray-deco" aria-hidden="true" focusable="false" viewBox="0 0 80 16" width="80" height="16" xmlns="http://www.w3.org/2000/svg">
-  <!-- eraser -->
-  <rect x="0" y="2" width="30" height="12" fill="#1a1a1a"/>
-  <!-- chalk -->
-  <rect x="38" y="5" width="42" height="6" fill="#f0f0ee"/>
+<svg class="chalk-tray-deco" aria-hidden="true" focusable="false" viewBox="0 0 110 28" width="110" height="28" xmlns="http://www.w3.org/2000/svg">
+  <!-- eraser: rectangular prism -->
+  <!-- front face -->
+  <rect x="0" y="10" width="44" height="18" fill="#1a1a1a"/>
+  <!-- top face -->
+  <polygon points="0,10 6,4 50,4 44,10" fill="#3a3a3a"/>
+  <!-- right face -->
+  <polygon points="44,10 50,4 50,22 44,28" fill="#111111"/>
+  <!-- chalk: skinny rectangle sitting on bottom -->
+  <rect x="58" y="19" width="52" height="9" fill="#f0f0ee"/>
 </svg>
 </header>
 
