@@ -130,24 +130,20 @@ main.home {
 
 /* ---- masthead + primary nav ---- */
 .masthead {
-  background: #3a5a40;
+  background: #3a5a40 url('/chalkboard_screenshot.png') center/cover no-repeat;
   border-bottom: 1px solid #2a4430;
   padding: 20px 0;
   position: sticky;
   top: 0;
   z-index: 100;
 }
-.masthead-texture {
-  position: absolute;
-  inset: 0;
-  background: white;
-  filter: url(#chalk-texture);
-  opacity: 0.08;
-  pointer-events: none;
-  z-index: 0;
-}
-.masthead > *:not(.masthead-texture) { position: relative; z-index: 1; }
 @media (min-width: 600px) { .masthead { padding: 25px 0; } }
+.chalk-tray-deco {
+  position: absolute;
+  bottom: 6px;
+  left: 12px;
+  opacity: 0.9;
+}
 .topnav {
   max-width: var(--maxw);   /* match the content column so the name lines up with the page h1 */
   margin: 0 auto;
