@@ -157,6 +157,19 @@ main.home {
 .topnav .site-name:focus { color: var(--accent); }
 body.home .topnav .site-name { display: none; }
 body.home .topnav ul { margin-left: auto; }
+.home-tagline {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.35rem;
+  color: var(--accent);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.1s ease, transform 0.1s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-tagline { opacity: 1 !important; transform: none !important; }
+}
 
 /* CSE 151B course pages: purple accent to complement schedule plum tones */
 body.cse151b {

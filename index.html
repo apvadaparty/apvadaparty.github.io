@@ -6,6 +6,7 @@
 <title>Annapurna Vadaparty</title>
 <meta name="description" content="Annapurna Vadaparty — PhD candidate studying human-computer interaction and computer science education at UC San Diego.">
 <link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap">
 </head>
 <body class="home">
 <a class="skip" href="#main">Skip to content</a>
@@ -14,6 +15,7 @@
 <!-- NAV:START — keep identical across all pages (only aria-current differs per page) -->
 <nav class="topnav" aria-label="Primary">
   <a class="site-name" href="/">Annapurna Vadaparty</a>
+  <span class="home-tagline" aria-hidden="true">Bringing learning sciences to the classroom.</span>
   <ul>
     <li><a href="/" aria-current="page">Home</a></li>
     <li><a href="/research/">Research</a></li>
@@ -82,5 +84,18 @@
 <footer class="foot">
   <p><a href="https://apvadaparty.github.io/">Annapurna Vadaparty</a> &middot; <a href="mailto:avadaparty@ucsd.edu">avadaparty@ucsd.edu</a></p>
 </footer>
+<script>
+(function () {
+  var el = document.querySelector('.home-tagline');
+  if (!el) return;
+  function update() {
+    var ratio = Math.min(window.scrollY / 120, 1);
+    el.style.opacity = ratio;
+    el.style.transform = 'translateY(' + (12 * (1 - ratio)) + 'px)';
+  }
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+}());
+</script>
 </body>
 </html>
