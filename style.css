@@ -130,10 +130,22 @@ main.home {
 
 /* ---- masthead + primary nav ---- */
 .masthead {
-  background: var(--band);
-  border-bottom: 1px solid var(--rule);
+  background: #3a5a40;
+  border-bottom: 1px solid #2a4430;
   padding: 20px 0;
+  position: relative;
+  overflow: hidden;
 }
+/* chalkboard texture via SVG feTurbulence filter */
+.masthead::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='80'%3E%3Cfilter id='chalk'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeBlend in='SourceGraphic' mode='multiply'/%3E%3C/filter%3E%3Crect width='300' height='80' filter='url(%23chalk)' opacity='0.18'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+.masthead > * { position: relative; z-index: 1; }
 @media (min-width: 600px) { .masthead { padding: 25px 0; } }
 .topnav {
   max-width: var(--maxw);   /* match the content column so the name lines up with the page h1 */
@@ -148,27 +160,47 @@ main.home {
 .topnav .site-name {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--heading);
+  color: #ffffff;
   text-decoration: none;
   margin-right: auto;
   letter-spacing: .01em;
 }
 .topnav .site-name:hover,
-.topnav .site-name:focus { color: var(--accent); }
+.topnav .site-name:focus { color: #c8dfc8; }
+.topnav a { color: #ffffff; }
+.topnav a:hover,
+.topnav a:focus { color: #c8dfc8; }
+.topnav a[aria-current="page"] {
+  font-weight: 700;
+  border-bottom: 2px solid #ffffff;
+}
 body.home .topnav .site-name { display: none; }
 body.home .topnav ul { margin-left: auto; }
-.home-tagline {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.35rem;
-  color: var(--accent);
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.1s ease, transform 0.1s ease;
+
+/* cursive SVG tagline (homepage only) */
+.home-tagline-svg {
+  margin-right: auto;
+  overflow: visible;
   pointer-events: none;
-  white-space: nowrap;
+}
+.home-tagline-svg text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 26px;
+  font-weight: 600;
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 1px;
+  paint-order: stroke fill;
 }
 @media (prefers-reduced-motion: reduce) {
-  .home-tagline { opacity: 1 !important; transform: none !important; }
+  .home-tagline-svg text { stroke-dashoffset: 0 !important; }
+}
+
+/* Homepage: chalkboard green accent */
+body.home {
+  --accent:      #3a5a40;  /* chalkboard green; ~7:1 on off-white */
+  --accent-dark: #2a4430;  /* deeper green */
+  --accent-soft: #d4e5d6;  /* pale green tint for hover backgrounds */
 }
 
 /* CSE 151B course pages: purple accent to complement schedule plum tones */

@@ -15,7 +15,9 @@
 <!-- NAV:START — keep identical across all pages (only aria-current differs per page) -->
 <nav class="topnav" aria-label="Primary">
   <a class="site-name" href="/">Annapurna Vadaparty</a>
-  <span class="home-tagline" aria-hidden="true">Bringing learning sciences to the classroom.</span>
+  <svg class="home-tagline-svg" height="36" aria-label="Bringing learning sciences to the classroom.">
+    <text x="0" y="28">Bringing learning sciences to the classroom.</text>
+  </svg>
   <ul>
     <li><a href="/" aria-current="page">Home</a></li>
     <li><a href="/research/">Research</a></li>
@@ -86,12 +88,17 @@
 </footer>
 <script>
 (function () {
-  var el = document.querySelector('.home-tagline');
-  if (!el) return;
+  var textEl = document.querySelector('.home-tagline-svg text');
+  if (!textEl) return;
+  var len = textEl.getComputedTextLength ? textEl.getComputedTextLength() : 600;
+  textEl.style.strokeDasharray = len;
+  textEl.style.strokeDashoffset = len;
+  textEl.style.fill = 'none';
   function update() {
-    var ratio = Math.min(window.scrollY / 120, 1);
-    el.style.opacity = ratio;
-    el.style.transform = 'translateY(' + (12 * (1 - ratio)) + 'px)';
+    var ratio = Math.min(window.scrollY / 200, 1);
+    textEl.style.strokeDashoffset = len * (1 - ratio);
+    // fill fades in after stroke is mostly drawn
+    textEl.style.fill = ratio > 0.7 ? 'rgba(255,255,255,' + Math.min((ratio - 0.7) / 0.3, 1) + ')' : 'none';
   }
   update();
   window.addEventListener('scroll', update, { passive: true });

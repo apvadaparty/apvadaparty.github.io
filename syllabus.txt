@@ -1,0 +1,620 @@
+Syllabus: Deep Learning (CSE 151B)
+Welcome to Deep Learning! Below is our syllabus, which is subject to change.
+Course Days & Times
+Lecture: Monday, Tuesday, Wednesday from 11:00am-12:20pm Coalition (COA) B30
+Oral assessments: Thursdays at your scheduled time and room in the CSE building
+basement (scheduled through Google Calendar).
+Discussion times: Monday, Weds 2:00pm-2:50pm.
+Office Hours:
+-
+Alexander: Tuesday from 12:30–1:30 PM
+-
+Annapurna: Thursday from 1pm-2pm
+Course Learning Outcomes
+-
+Understand various architectures:
+-
+Multilayer perceptron (MLP)
+-
+Convolutional neural networks (CNN)
+-
+Recurrent neural networks RNN (RNN) and Long Short Term Memory (LSTM)
+-
+Transformers
+-
+Understand processes and algorithms used in the above architectures:
+-
+Activation functions: Rectified Linear Units (ReLU)
+-
+Backpropagation
+-
+Attention
+-
+Basic familiarity with advanced topics:
+-
+RL with human feedback (RLHF)
+-
+Large language models (LLMs)
+What does it mean to “understand” an architecture (e.g. multilayer perceptron) or algorithm (e.g.
+backpropagation), and what is its relevance (why is it part of our learning outcomes)? Here are the
+attributes to aim for in your understanding of each topic, and why these are important and
+relevant for your understanding.
+Attribute of understanding an
+architecture or algorithm
+Relevance Understanding Basic
+familiarity
+Know how an algorithm or
+architecture arose, and what were
+the researchers or engineers trying
+to do when they created it
+Contextualizing your own work
+and career, and recognizing
+when you might need to make a
+change to a current
+architecture in order to achieve
+a certain goal with what you’re
+building
+✓ ✓
+Know what affordances and
+drawbacks it has compared to
+other architectures or algorithms
+Deciding which architecture or
+algorithm to use
+✓ ✓
+Know what properties of the
+structure or algorithm create its
+affordances and drawbacks
+Knowing likely impacts of
+changes you make to an
+architecture or algorithm
+✓ ✓
+Perform calculations and recognize
+empirical outputs that demonstrate
+the above properties
+Recognizing how different
+properties manifest in
+numerical outputs
+✓ ✗
+Know how an architecture or
+algorithm responds to differing
+inputs
+Knowing likely impacts of
+training on different sets of
+inputs and what might be
+under/over represented in your
+data
+✓ ✓
+Perform calculations and recognize
+empirical outputs that demonstrate
+the above differences
+Recognizing when particular
+trends or issues with data
+might be causing unexpected
+outputs
+✓ ✗
+Modify implementations of the
+architecture or algorithms to
+achieve desired changes
+Making changes to an
+architecture for applications
+you are creating with a
+particular goal
+✓ ✗
+Know about how different data
+distributions and the presence or
+absence of certain types of data
+affect an architecture or
+algorithm’s outcome
+Sourcing varied and
+representative training data is
+critical for creating
+generalizable models and
+avoiding unintended biases and
+ethical violations
+✓ ✓
+Instructional T eam
+Annapurna Vadaparty
+I am a final-year PhD student in the CSE Department. My
+personal research interests are in how people learn and
+problem solve–my undergraduate degrees are a B.S.
+Neuroscience and B.S. in Computer Science. My dissertation
+work is about GenAI-integrated pedagogies for CS classes.
+Outside of my dissertation work, I'm also working on teaching
+staff/TA training–I enjoy teaching how to teach!
+For fun I like to hike, read, go to the beach, paint, and work
+with local mutual aid groups!
+Email: avadaparty@ucsd.edu
+Ben Bao
+I am a first-year Master’s student in Computer Science. My
+academic focus is on machine learning and general software
+development. I hope to be able to apply my skills towards
+technologies that improve the lives of people and help them
+live more fulfilling lives. I did my undergraduate here at UCSD
+in Cognitive Science, so feel free to chat with me about
+anything brain or psychology related!
+In my spare time I enjoy cooking, guitar, hiking, backpacking,
+and playing video games.
+Email: tibao@ucsd.edu
+Tutor: Trevor Duong
+I am an incoming 4th year computer science major at UCSD.
+My academic and project interests focus heavily on software
+engineering and machine learning implementations. I am
+really excited to assist with your learning in any way I can!
+For fun I love weightlifting, playing the piano/drums, playing
+video games, and snowboarding!
+Email: trduong@ucsd.edu
+T eaching Philosophy
+Pragmatism guides us in two key ways. First, we design for real students with real
+constraints and a wide range of priorities. We aim to assign meaningful but manageable
+workloads, and incorporate flex days for when things arise outside of class. We also
+recognize the temptations of the path of least resistance, and understand that the variety
+of online resources and tools that could render assignments fruitless. We see such
+temptations as human tendencies rather than a limitation of any particular student. To this
+end, we've designed the course with in-person explanation components (through class
+discussions and oral assessments) to incentivize you as a student to understand the
+content in enough depth to communicate about it. A second major way in which
+pragmatism guides us is in the development of core learning objectives. For each learning
+objective, we carefully consider why it is important and how a student is likely to use this
+knowledge in future endeavors. We do not aim to have students implement every
+architecture or prove every theorem that has ever been published. Instead, we curate
+what problems to ask students to spend their time on based on what practical knowledge
+they are likely to need. This is not to say that we skimp on theory (I personally love a good,
+intuition-driven proof!). Rather, we focus our expectations of students’ understanding of
+both theory and application components on intuitions and skills that we think will be
+ever-green in the swiftly moving AI landscape.
+We center joy in our teaching. When we think back to our favorite teachers, one common
+element is the fact that they are able to bring the joy intrinsic to the subject matter to the
+student. Good teachers are able to adequately build a bridge from the student’s current
+knowledge to the new content in the course, and help build their curiosity toward the
+course content and appreciate the beauty of the new concepts they are learning. We
+strive to make the exciting parts of the subject matter accessible to the learner.
+Underpinning both pragmatism and joy is, of course, equity. In order for students to learn
+the important and exciting parts of the course, they must be equipped with the tools and
+infrastructure (both inside and outside the classroom) to succeed. Our flex days aim to
+account for extenuating circumstances in students’ personal life while still aiming to keep
+them on track and not fall further behind than they are able to catch up from. We
+incorporate mastery learning by allowing for retakes in several course
+components–students come from different backgrounds and may take different amounts
+of time to absorb and practice material, and we want to embrace and encourage
+remediation and improvement. Additionally, in a course like deep learning, computing
+power of personal computers can quickly uneven the playing field in project submissions
+that use large models. To this end, we have ensured that there are free resources available
+for students to be able to complete all assignments in reasonable amounts of time without
+needing to pay, which is often a concern in classes that involve GPUs.
+These principles are also supported by our flipped classroom model that allows and
+encourages students to learn at their own pace outside the classroom. We use class time
+to support challenging learning that leads up to assignments.
+Course Materials and T ools
+You are not required to purchase any materials for this course, as all readings will be
+available as PDFs or online resources. All learning materials will be available on the course
+webpage: https://apvadaparty.github.io/teaching/cse151b/schedule/
+You are expected to have a functioning computer and access to a Python coding
+environment you are comfortable with.
+Assignments, Projects, and Grading
+Assessment
+Many components will be scored as NP - No Pass, LP - Low Pass, P - Pass, HP - High Pass.
+Pre-lecture homeworks (NP/LP/P/HP): These are homework assignments on PrairieLearn that
+you will complete based on the pre-lecture watching/reading materials. There will be one
+homework assignment per class session. They will be graded for both completeness and
+correctness. This aims to keep you on track with the material and pre-lecture preparation, while
+also giving you time to revisit and absorb the material throughout the week before submitting it
+for a correctness grade. There are unlimited attempts for you to get full credit.
+-
+Pre-lecture completeness grade: pre-lecture homeworks should be completed before
+lecture each day, and will be graded for completeness at the time of the start of lecture.
+You will get full credit for this completeness portion as long as you have attempted every
+question in PrairieLearn.
+-
+Weekly submission correctness grade: throughout the week, you can revisit and resubmit
+the homework until Friday night. Your grade for the homework will be your score on
+PrairieLearn at the time of the deadline.
+Programming assignment (PA) grade (NP/LP/P/HP): are based on what you submit on
+PrairieLearn, and confirmed by your performance in the PA oral assessment (that is, you earn the
+grade for what your PrairieLearn submission score is only if you pass the oral assessment).
+PA oral assessment (NP/LP/P/HP): For each programming assignment (PA), you will submit it on
+PrairieLearn on the specified date in the course schedule, and you will also have an oral
+assessment on the PA conducted by a member of the teaching staff. There will be two portions,
+where we will ask you the following:
+-
+Understanding: We will ask you to explain a portion of your code.
+-
+Predicting: We will specify a change in the code, and ask you to predict what would happen
+if you were to make this change.
+Oral assessments will take place on Thursdays each week, and must be scheduled through Google
+Calendar with a teaching staff member by the Tuesday before.
+(These are inspired by the DUE method from Adam Blank’s course at Caltech:
+https://readings.caltech.codes/ta-howtos/dues/ )
+Exam (0-100): Exams will be taken in the CBTF and will also offer an opportunity to retake. They
+will be most related to the pre-lecture homework material, though we do aim for the PAs and
+pre-lecture homework to both reinforce the course content.
+Project: A project about communication or a Kaggle competition, described below.
+Project Description
+The course project gives you two options, and you should choose the one that fits how you want to
+engage with deep learning this term.
+The Communication option: a video, blog post, article, game, or anything else that explains or
+teaches some idea in deep learning in a novel context. The deliverable is the artifact itself together
+with a short paper explaining your design decisions and creation process written as an experience
+report, and you'll give a 10-minute presentation. You are not required to formally evaluate how
+your artifact landed with an audience, though you're welcome to.
+The Kaggle option asks you to build a solution using any deep learning algorithms and
+architectures to score well on a given dataset. The deliverable is your code together with a research
+paper, and you'll give a 3-minute lightning talk.
+More about experience reports and research papers are in the SIGCSE 2026 papers track
+description: https://sigcse2026.sigcse.org/track/sigcse-ts-2026-Papers.
+Project Proposal
+Proposals are due Monday, July 6. Your proposal should take the form of a structured abstract of
+250–350 words, organized into five parts.
+In Background and Context, Communication projects should establish who the audience is, what
+you intend to create, why it matters, and what already exists in that space; Kaggle projects should
+state what problem you're solving, why it matters, and what has already been tried.
+In Goals, Communication projects describe what you intend to create, while Kaggle projects state
+what you're trying to achieve—likely a benchmarking target.
+In Methods, Communication projects explain how you'll make your design choices and build the
+artifact; Kaggle projects name the algorithms and architectures you plan to explore.
+In Results, Communication projects explain the artifact and its affordances and drawbacks; Kaggle
+projects state what you hypothesize will happen under the methods you've described, and you
+may offer several competing hypotheses and outcomes.
+Finally, in Implications, both tracks address what the work implies going forward.
+Grading
+Your letter grade in the course comes from three components:
+-
+Engagement & Social Learning:
+-
+Pre-lecture homeworks completed before class (3 lowest dropped). Complete or
+incomplete. All questions in the pre-lecture homework must be attempted in order
+for it to be considered complete. The standards below are after the 3 lowest scores
+have been dropped.
+-
+Learning Process & Resource reflection: No Pass, Low Pass, Pass, High Pass.
+-
+Assignments & Project:
+-
+Pre-lecture homeworks corrected by the end of each week (3 lowest dropped): No
+Pass, Low Pass, Pass, High Pass. The standards below are after the 3 lowest scores
+have been dropped.
+-
+Assignments submitted to PrairieLearn and verified by oral assessment: No Pass,
+Low Pass, Pass, High Pass. Score is determined by both assignment and the oral
+assessment score.
+-
+Project completed as specified including proposal, writeup, and presentation. Each
+is scored No Pass, Low Pass, Pass, High Pass.
+-
+Exams:
+-
+Exam 1 and Exam 2, scored out of 100. For exam scores, the standards below are
+after the retake calculations and after any curve has been applied.
+Standards: Course Letter Grades
+Our course uses standards-based grading (read more here from Prof. Joe Politz).
+Rubrics will generally have the following categories: high pass (HP), pass (P), low pass (LP), and no
+pass (NP).
+The standards for letter grades A-C are as follows.
+A grade:
+-
+> 80% on both exams
+-
+High pass on at least 3 of 4 assignments, pass on remaining assignment
+-
+High pass on all of the Learning Process and Resource Reflections
+-
+Completed 80% of pre-lecture homeworks for completeness before class
+-
+High pass on 80% of pre-lecture homeworks for correctness, pass on remaining
+pre-lecture homeworks for correctness
+-
+High pass on the project
+A+: High pass on all components
+A-: Meeting the B grade standards for exactly one of any of the above categories other than the
+exam score–a lower exam score moves to the B range
+B grade:
+-
+> 80% on one exam, > 70% on another exam
+-
+High pass on at least 2 of 4 assignments, pass on two remaining assignments
+-
+Completed 60% of pre-lecture homeworks for completeness before class
+-
+High pass on 60% of pre-lecture homeworks, pass on remaining pre-lecture homeworks
+-
+High pass on all of the Learning Process and Resource Reflections
+-
+High pass or pass on the project
+B+: Achieving the A grade standards in any of the above categories
+B-: Meeting the C standards for exactly one of any of the above categories other than the exam
+score–a lower exam score moves to the C range
+C grade:
+-
+> 60% on one exam, > 50% on another exam
+-
+Pass on at least 3 assignments
+-
+Completed 60% of pre-lecture homeworks for completeness before class
+-
+Pass on at least 60% of pre-lecture homeworks
+-
+Pass on all of the Learning Process and Resource Reflections
+-
+Pass or low pass on the project
+C+: Achieving the A or B grade standards in any of the above categories
+C-: Missing exactly one of any of the above categories other than the exam score–a lower exam
+score moves to F or Incomplete.
+No D grades will be assigned. Below the standards for C grades will be given an F or Incomplete.
+Please speak to the teaching staff if you feel at any point that you are not likely to pass the
+class–we are here to help.
+Standards: Assignments & Oral Assessments
+-
+Assignments: Architectures & Algorithms Portions
+These are math and conceptual problems on each assignment. These parts are intended to
+align well with exam problems and be opportunities to both learn and assess your
+knowledge.
+HP: 90% of problems correct
+P: 80% of problems correct
+LP: 60% of problems correct
+NC: Below 60% correct.
+-
+Assignments: Programming Portions
+No submission needed for Assignment 0 Programming portion.
+For Assignments 1-4, the standards are as follows:
+HP: HP Benchmark specified in the homework has been met for all problems.
+P: HP or P benchmark specified in the homework has been met for all problems.
+LP: HP, P, or LP benchmark specified in the homework has been met for all problems.
+NC: Benchmark specified in the homework has not been met for over 3 problems.
+-
+Oral assessments for programming portions of assignments:
+High Pass: Answer correctly with minimal prompting from teaching staff.
+Pass: Answer correctly with some prompting or correction from teaching staff.
+Low pass: Answer correctly with extensive prompting or correction from teaching staff.
+No pass: No-show or only incorrect answers.
+You earn your submitted assignment grade by earning a High Pass on your oral assessment.
+Your grade for the assignment is determined by both the oral assessment and your
+autograder score. If you get a High Pass on the assignment but Low Pass on the oral
+assessment, you earn a Low Pass.
+Each week, you can re-take one question from the previous week for a full replacement.
+Standards: Learning Process & Resource Reflections
+High Pass: At least 300 words, all questions completed
+Pass: At least 200 words, all questions completed
+Low Pass: Some questions not completed
+NP: Above criteria not met
+Standards: Pre-Lecture Homeworks for Correctness
+High Pass: All correct
+Pass: Maximum of 1 question incorrect
+Low Pass: At least 3 questions correct
+NP: Above criteria not met
+Attendance and Participation
+Attendance for each class is required. You will be sitting in groups and expected to work
+with your peers throughout the course, so if you’re missing, it will impact both your
+experience and your peers’
+. If you will be absent, please let me know in advance. If you
+have a day-of emergency and are unable to let us know in advance, please get in contact
+with us as soon as you are able to. It will likely be difficult to follow along with the course
+content, and you will need to meet and get instructor permission in order to be eligible
+to take the final exam if you miss more than three classes.
+For each of the days you miss, please make a private Piazza post with:
+-
+Your plan to catch up on the material missed during lecture
+-
+How you are feeling about being able to complete your assignments on time
+We want you to prioritize your health and well-being, and if it really isn’t a good idea for you to
+attend class on a particular day, please don’t (and let us know as soon as possible if you will be
+missing a class). For planned absences more than 3 days, please request an exception well in
+advance and contact Annapurna to discuss how we can accommodate your plans.
+Attendance for the discussion sections (Monday and Wednesday) is highly recommended. This will
+be one of the primary ways in which you stay on track with the course content and are able to keep
+track of expectations and get help for assignments. Rather than answering the same questions
+across several different Piazza posts and office hours, the discussion section efficiently allows
+everyone to be on the same page. If you will not be able to attend discussion in general, please
+make a private Piazza post so that we can discuss how you are planning to stay on top of course
+content and get help when you need it.
+Late days & Exceptions
+Late days are counted hourly–e.g. you can use 6 hours on a submission and it will only count as 6
+hours, not a full day. No more than 1 late day (24 hours) is allowed per submission, since we want
+to be able to release answer keys and ensure that learning stays on pace. We will not grade any
+attempts made later than 24 hours after the assignment is due, and if there is no submission for an
+assignment 24 hours after the deadline, you will receive a 0.
+Below are how late days are allocated for each assignment type.
+Assignments: 48 late hours (2 late days) max for the duration of the course. Maximum of 12 late
+hours per assignment. This means that assignments should be turned in on Thursday at noon at
+the latest. This is especially important for making sure that you are able to take your oral
+assessment about the assignment on Thursday.
+Pre-lecture homeworks for completeness: Must be completed before class each day in order to
+receive pre-lecture completeness credit. 3 lowest scores dropped.
+Pre-lecture homeworks for correctness: 48 hours (2 late days) max for the duration of the course.
+3 lowest scores dropped. Maximum of 1 late day per pre-lecture homework. Since all pre-lecture
+homeworks are due for correctness on Friday each week, this means that you can turn in any
+pre-lecture homework for correctness by Saturday night at the latest.
+Project: 24 late hours (1 late day) max for the proposal and the final submission in total.
+If you have extenuating circumstances and a situation arises in which you think you will need more
+accommodations than the late days described above, please come chat with the instructor after
+class, in office hours, in a Piazza private post, or email.
+Course Schedule
+Please see the course website for the full course schedule.
+Academic Integrity Policy
+Learning Process and Resource Reflection
+For each of your assignments (A0-A4), you will submit a Learning Process and Resource Reflection
+on Piazza each week. For a high pass, your responses to questions 2 onward should total at least
+300 words, and all questions must be completed. Any format is fine–paragraphs, bullets, whatever
+you prefer. You are welcome to post with your name or anonymously to classmates (teaching staff
+can see names on all posts).
+Think about all of the resources that you really couldn’t have done the assignment without (GenAI,
+textbook, a Stackoverflow/Medium post or Github repo that you adapted your solution from).
+There may be multiple resources you used (e.g. maybe you used a particular Geeks4Geeks post a
+lot and also used GenAI a lot). Then, pick one to focus on as you answer the following questions,
+but feel free to mention if you used others along the way. The goal here is for you to communicate
+with your classmates and teaching staff how you’re learning the course content–what’s working,
+and what isn’t?
+We do ask that you not use GenAI for these–we really do want to know what you did, and there
+are no right or wrong answers, so there shouldn’t be any motivation for you to use it if we all agree
+on the goal of knowledge sharing to help each other!
+Please answer the following questions, and post your response on Piazza by Friday each week:
+1. Provide a link/brief description of at least one resource you felt was critical to your
+completion of this assignment. Feel free to list as many as you’d like (this question does not
+contribute to the word count).
+(Then pick one to answer the remaining questions about).
+2. How did you use the tool/resource at each step? For GenAI, were there particular prompts
+you used? For online resources, did you look at the solution and adapt it? Did you try other
+problems for practice after using the solution you found? No right or wrong answers–just
+be sure to explain your process! Whether you’re satisfied or unsatisfied with the way you
+used available resources, explain your method (and you can reflect on whether it was
+helpful in the next question).
+3. In what ways did this help and/or hinder your learning process? This is an important
+metacognitive activity regardless of GenAI–reflecting on your learning process can help
+both us and you reflect on what you’re doing and whether or not it’s helpful for meeting
+the intended learning objectives.
+4. How did you decide whether to use the material or output from the tool/resource? Did you
+have particular test cases? Were there components in the solution that you were looking
+to make sure it included?
+5. Provide clear recommendations for classmates on what parts of your process you found
+helpful and unhelpful.
+6. Vote on your classmates’ posts!
+Coursework Without GenAI
+If you’d prefer not to use GenAI, that is perfectly fine and I welcome you to share your opinions
+and tips you have about working without GenAI! The course is designed to be doable both for
+people who do and don’t want to use GenAI.
+You will still be expected to complete a Learning Process and Resource Reflection for each
+assignment describing whichever materials you do use.
+Plagiarism
+Plagiarism from any source (including classmates, past students, paid tutors who do an assignment
+for you, online sources or tools without citing them in your Learning Process and Resource
+Reflection) will not be tolerated.
+The first infraction will lead to a 0 on an assignment and a conversation with the instructor. A
+second infraction will lead to failing the class and a referral to the academic integrity office.
+If you are unsure about whether or not what you’re doing counts as plagiarism, please reach out to
+check with the teaching staff.
+Asking for Help: Class, Discussion, Office Hours, and Public Piazza Posts
+In general, we encourage you to ask us questions in person during class, discussion, or in group or
+1-1 office hours!
+For when asynchronous help is preferred, please post a public question in Piazza. Please avoid
+posting answers or portions of answers in these questions. If a private question is posted, we will
+likely ask you to make it public and/or rephrase your question (to avoid directly sharing answers)
+so that it can be made public.
+Overall Community and Engagement Expectations
+1. We are all partners in this learning space: as instructors of this course, our main
+goals are building community and critically thinking about our role in facilitating
+learning experiences for our students. We invite you to join us in pursuing these
+goals. As long as this remains the core of our learning space, things can be flexible
+and we can adjust things, depending on everyone’s needs and constraints.
+2. We trust that you take charge of your work and opinions: we invite you to fully
+participate in order to get the full benefit of the course (the ol’ “you get out what
+you put in” idea). We also invite you to freely share your ideas so we can have open,
+honest, discussions. Nonetheless, we encourage you to consider your individual
+investment and attitude in the course as a crucial part of the larger collective
+endeavour that we share. So, we all get what we all put into this space.
+3. Be open to both sharing and listening with empathy: we believe that learning and
+growing will come from having constructive dialogue. This may mean that
+sometimes we need to allow ourselves to go outside of our comfort zones. Topics
+we discuss may have us facing ideas that are disquieting or unfamiliar. We invite
+you to share your opinions openly, yet from a place of empathy. We also encourage
+everyone to actively listen to the diverse voices in the room. While we do not have
+to agree with everyone, we can always learn from each other’s experiences and
+grow as a community.
+4. We strive to build a community of collective care: we acknowledge that care is an
+integral part of the labor in learning. Sometimes this means acknowledging our
+boundaries, both in terms of how much work we can take on and how much
+discomfort we are willing to deal with. In terms of work overload, we hope you feel
+comfortable communicating your circumstances so we can find a way to support
+you (yes, this includes extensions whenever possible).
+Health and Well-Being Statement
+We acknowledge that health and well-being take priority over any kind of course work.
+Please reach out if you feel keeping up with this class is compromising either. Competing
+demands together with an unpredictable life and world events can become overwhelming,
+especially if you are juggling multiple jobs, family or immigration issues, health issues, and
+other challenges. Please do ask for support, and reach out to us and/or the resources
+listed below.
+Accessibility of Class Sessions and Course Materials
+Allowing each of you to succeed and benefit from this course is important to us. We are
+aware that because we all learn differently, accommodations may be needed. We will do
+our best to upload slides in advance of class. If there are aspects of this course that
+prevent you from learning or exclude you, please let any of the instructors know as soon
+as possible. Together we’ll develop strategies and a plan that will meet your needs and
+the aims of the course. Please do not hesitate to contact us.
+Resources for Support and Learning
+Learning and Academic Support
+Ask a Librarian: Library Support
+Chat or make an appointment with a
+librarian to focus on your research needs
+Course Reserves, Connecting from
+Off-Campus and Research Support
+Find supplemental course materials
+First Gen Student Success Coaching
+Program
+Peer mentor program that provides students
+with information, resources, and support in
+meeting their goals
+Office of Academic Support &
+Instructional Services (OASIS)
+Intellectual and personal development
+support
+Writing Hub Services in the T eaching +
+Learning Commons
+One-on-one online writing tutoring and
+workshops on key writing topics
+Supplemental Instruction
+Peer-assisted study sessions through the
+Academic Achievement Hub to improve
+success in historically challenging courses
+Tutoring – Content
+Drop-in and online tutoring through the
+Academic Achievement Hub
+Tutoring – Learning Strategies
+Address learning challenges with a
+metacognitive approach
+Support for Well-being and Inclusion
+Basic Needs at UCSD
+Any student who has difficulty accessing
+sufficient food to eat every day, or who lacks
+a safe and stable place to live is encouraged
+to contact: foodpantry@.ucsd.edu |
+basicneeds@ucsd.edu | (858) 246-2632
+Counseling and Psychological Services
+Confidential counseling and consultations
+for psychiatric service and mental health
+programming
+Triton Concern Line
+Report students of concern: (858)
+246-1111
+Office for Students with Disabilities
+(OSD)
+Community and Resource Centers
+As part of the Office of Organizational
+Transformation the campus community centers
+provide programs and resources for students
+and contribute toward the evolution of a
+socially just campus
+(858) 822-3542 | diversity@ucsd.edu
+Get Involved
+Student organizations, clubs, service
+opportunities, and many other ways to connect
+with others on campus
+Undocumented Student Services
+Programs and services are designed to help
+students overcome obstacles that arise from
+their immigration status and support them
+through personal and academic excellence
+Supports students with disabilities and
+accessibility across campus
+Campus Policies
+●
+UC San Diego Principles of Community
+●
+UC San Diego Policy on Integrity of Scholarship
+●
+Religious Accommodation
+●
+Nondiscrimination and Harassment
+●
+UC San Diego Student Conduct Code
+Land Acknowledgement
+Whether we gather in-person or remotely, this course is being offered by UC San Diego,
+which is built on the unceded territory of the Kumeyaay Nation. The UC San Diego
+community holds great respect for the land and the original people of the area where our
+campus is located. The university is built on the unceded territory of the Kumeyaay
+Nation. Today, the Kumeyaay people continue to maintain their political sovereignty and
+cultural traditions as vital members of the San Diego community. We acknowledge their
+tremendous contributions to our region and thank them for their stewardship.
+This acknowledgement was gratefully adapted from the UC San Diego Intertribal
+Resource Center. Whose land are you on?
+Read more about the UC San Diego Indigenous Futures Institute: ifi.ucsd.edu
+Additional Acknowledgements
+This syllabus has been adapted from the one designed by the UCSD Teaching and Learning
+commons. A special thanks to Erilynn Heinrichsen, Alex Dinh, and Ebru Evcen, the
+wonderful teaching team for Advanced College Teaching.
