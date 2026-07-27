@@ -131,7 +131,7 @@ main.home {
 /* ---- masthead + primary nav ---- */
 .masthead {
   background: #3a5a40 url('/chalkboard_screenshot.png') center/cover no-repeat;
-  border-bottom: 1px solid #2a4430;
+  border-bottom: 1px solid #9aa89a;
   padding: 20px 0;
   position: sticky;
   top: 0;
@@ -171,13 +171,14 @@ main.home {
 .topnav a:focus { color: #c8dfc8 !important; background: transparent; }
 .topnav a[aria-current="page"] {
   font-weight: 700;
-  border-bottom: 2px solid #ffffff;
+  border-bottom: 2px solid #a8b8a8;
 }
 body.home .topnav .site-name { display: none; }
 body.home .topnav ul { margin-left: auto; }
 
 /* chalk text image tagline (homepage only) */
 .home-tagline-img {
+  margin-left: 130px;
   margin-right: auto;
   height: 36px;
   width: auto;
