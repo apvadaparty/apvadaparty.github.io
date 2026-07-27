@@ -133,19 +133,19 @@ main.home {
   background: #3a5a40;
   border-bottom: 1px solid #2a4430;
   padding: 20px 0;
-  position: relative;
-  overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
-/* chalkboard texture via SVG feTurbulence filter */
-.masthead::before {
-  content: '';
+.masthead-texture {
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='80'%3E%3Cfilter id='chalk'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeBlend in='SourceGraphic' mode='multiply'/%3E%3C/filter%3E%3Crect width='300' height='80' filter='url(%23chalk)' opacity='0.18'/%3E%3C/svg%3E");
+  filter: url(#chalk-texture);
+  opacity: 0.12;
   pointer-events: none;
   z-index: 0;
 }
-.masthead > * { position: relative; z-index: 1; }
+.masthead > *:not(.masthead-texture) { position: relative; z-index: 1; }
 @media (min-width: 600px) { .masthead { padding: 25px 0; } }
 .topnav {
   max-width: var(--maxw);   /* match the content column so the name lines up with the page h1 */
@@ -167,9 +167,9 @@ main.home {
 }
 .topnav .site-name:hover,
 .topnav .site-name:focus { color: #c8dfc8; }
-.topnav a { color: #ffffff; }
+.topnav a { color: #ffffff !important; }
 .topnav a:hover,
-.topnav a:focus { color: #c8dfc8; }
+.topnav a:focus { color: #c8dfc8 !important; background: transparent; }
 .topnav a[aria-current="page"] {
   font-weight: 700;
   border-bottom: 2px solid #ffffff;
@@ -184,7 +184,7 @@ body.home .topnav ul { margin-left: auto; }
   pointer-events: none;
 }
 .home-tagline-svg text {
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Homemade Apple', cursive;
   font-size: 26px;
   font-weight: 600;
   fill: none;
