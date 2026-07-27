@@ -179,7 +179,8 @@ body.home .topnav ul { margin-left: auto; }
 /* chalk text image tagline (homepage only) */
 .home-tagline-img {
   position: absolute;
-  bottom: 22px;
+  top: 50%;
+  transform: translateY(-50%);
   left: 80px;
   height: 45px;
   width: auto;
