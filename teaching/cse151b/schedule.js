@@ -145,14 +145,14 @@ const SCHEDULE = {
             { text: "3b1b Transformers", href: YT + "wjZofJX0v4M" }
           ],
           duePre:     [{ text: "Mid quarter survey" }, { text: "Pre-lecture HW due" }],
-          lecture:    [{ text: "Language and Transformers", href: "/teaching/cse151b/slides/Lecture 9 Jul 14 Transformers.pdf" }],
+          lecture:    [{ text: "Language and Transformers", href: "../slides/Lecture 9 Jul 14 Transformers.pdf" }],
           assessment: [{ text: "Retake Exam 1 CBTF Day 2 option" }],
           due:        [{ text: "Oral Assessment Sign Ups", href: "https://piazza.com/class/mq7cvtfat4t3ff/post/15" }]
         }},
         { weekday: "Wed", date: "Jul 15", lanes: {
           materials:  [{ text: "3b1b Attention", href: YT + "eMlx5fFNoYc" }],
           duePre:     [{ text: "Pre-lecture HW due" }],
-          lecture:    [{ text: "Attention", href: "/teaching/cse151b/slides/Lecture 10 Jul 15 Attention.pdf" }],
+          lecture:    [{ text: "Attention", href: "../slides/Lecture 10 Jul 15 Attention.pdf" }],
           discussion: [{ text: "Review & Assignment Help" }],
           due:        [{ text: "A2 due" }]
         }},
@@ -181,11 +181,11 @@ const SCHEDULE = {
             { text: "StatQuest RLHF", href: YT + "qPN_XZcJf_s" }
           ],
           duePre:     [{ text: "Pre-lecture HW due" }],
-          lecture:    [{ text: "RLHF", href: "/teaching/cse151b/slides/CSE 151B Jul 21 Lecture.pdf" }],
+          lecture:    [{ text: "RLHF", href: "../slides/CSE 151B Jul 21 Lecture.pdf" }],
           due:        [{ text: "Oral Assessment Sign Ups", href: "https://piazza.com/class/mq7cvtfat4t3ff/post/15" }]
         }},
         { weekday: "Wed", date: "Jul 22", lanes: {
-          lecture:    [{ text: "Career Panel Planning and Guest Lecture from Gary Cottrell", href: "/teaching/cse151b/slides/CSE 151B Jul 22 Lecture.pdf" }],
+          lecture:    [{ text: "Career Panel Planning and Guest Lecture from Gary Cottrell", href: "../slides/CSE 151B Jul 22 Lecture.pdf" }],
           discussion: [{ text: "Review & Assignment Help" }],
           due:        [{ text: "A3 due" }]
         }},
