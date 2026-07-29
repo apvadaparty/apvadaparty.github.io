@@ -25,10 +25,23 @@
 <img class="home-tagline-img" src="/chalktext_fontmeme_contescript.png" alt="Bringing learning sciences to the classroom.">
 <!-- chalk tray decorations -->
 <svg class="chalk-tray-deco" aria-hidden="true" focusable="false" viewBox="0 -2.5 116 22.5" width="116" height="22.5" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="eraser-top-clip">
+      <polygon points="0,7.5 4,3.5 44,3.5 40,7.5"/>
+    </clipPath>
+  </defs>
   <!-- eraser: rectangular prism, 25% taller -->
   <rect x="0" y="7.5" width="40" height="12.5" fill="#1a1a1a"/>
   <polygon points="0,7.5 4,3.5 44,3.5 40,7.5" fill="#3a3a3a"/>
   <polygon points="40,7.5 44,3.5 44,16 40,20" fill="#111111"/>
+  <!-- eraser top face: felt texture lines parallel to long axis -->
+  <line x1="1.33" y1="6.17" x2="41.33" y2="6.17" stroke="#666" stroke-width="0.4" clip-path="url(#eraser-top-clip)"/>
+  <line x1="2.67" y1="4.83" x2="42.67" y2="4.83" stroke="#666" stroke-width="0.4" clip-path="url(#eraser-top-clip)"/>
+  <!-- eraser bottom: grainy chalk dust smudges -->
+  <ellipse cx="6"  cy="19.5" rx="3"   ry="0.7" fill="white" opacity="0.25"/>
+  <ellipse cx="15" cy="19"   rx="2.2" ry="0.6" fill="white" opacity="0.20"/>
+  <ellipse cx="25" cy="19.5" rx="2.8" ry="0.7" fill="white" opacity="0.28"/>
+  <ellipse cx="33" cy="19"   rx="2"   ry="0.6" fill="white" opacity="0.20"/>
   <!-- chalk: rectangle body with oval right end cap -->
   <rect x="64" y="13" width="46" height="7" fill="#f0f0ee"/>
   <ellipse cx="110" cy="16.5" rx="2" ry="3.5" fill="#ddddd8"/>
