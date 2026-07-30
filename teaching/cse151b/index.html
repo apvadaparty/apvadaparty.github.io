@@ -48,7 +48,7 @@
     <dd><a href="cse151b_syllabus.pdf" download>Full CSE 151B syllabus</a></dd>
   </dl>
 
-  <details>
+  <details id="learning-outcomes">
     <summary><h2>Learning Outcomes</h2><p class="summary-preview">Understand the major deep learning architectures — MLPs, CNNs, RNNs, and transformers — and the processes that drive them. For each topic, know how and why it arose, its affordances and drawbacks, and how it responds to different inputs.</p></summary>
     <p>Understand the major architectures, the processes that drive them, and the broad shape of advanced topics.</p>
     <ul>
@@ -66,7 +66,7 @@
     </p>
   </details>
 
-  <details>
+  <details id="teaching-philosophy">
     <summary><h2>Teaching Philosophy</h2><p class="summary-preview">This course is guided by pragmatism, joy, and equity. Workloads are meaningful but manageable, the classroom is flipped, and mastery learning is built in through retakes at each step.</p><img src="/teaching/cse151b/flipped_classroom.jpg" alt="Diagram illustrating the flipped classroom model" class="summary-img summary-img--collapsed"></summary>
     <p>
       As a student, you may notice the variety of different teaching decisions made by different teaching teams. How do instructors choose what to teach, and how to assess what their students have learned? Each instructor has their own teaching philosophy, and here I would like to share mine with you so that you may better understand the rationale behind the teaching decisions in our course.
@@ -119,6 +119,22 @@
   </details>
 
 </main>
+
+<script>
+(function () {
+  function openTarget() {
+    var id = window.location.hash.slice(1);
+    if (!id) return;
+    var target = document.getElementById(id);
+    if (target && target.tagName === 'DETAILS') {
+      target.open = true;
+      target.scrollIntoView();
+    }
+  }
+  openTarget();
+  window.addEventListener('hashchange', openTarget);
+}());
+</script>
 
 <footer class="foot">
   <p>CSE 151B &middot; <a href="https://apvadaparty.github.io/">Annapurna Vadaparty</a> &middot; <a href="mailto:avadaparty@ucsd.edu">avadaparty@ucsd.edu</a></p>
