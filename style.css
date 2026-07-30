@@ -116,7 +116,7 @@ main.home {
   height: auto;
   border-radius: 50%;           /* with the 4:5 ratio this renders an ellipse */
   object-fit: cover;
-  object-position: center 30%;  /* bias toward the face */
+  object-position: center 0%;   /* bias toward the top of the image */
   border: 3px solid var(--bg);
   margin: 0 auto 1.1rem;
 }
