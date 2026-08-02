@@ -349,12 +349,19 @@ li { margin: .2rem 0; }
 
 /* ---- project gallery ---- */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.75rem;
   margin: 1.5rem 0;
 }
-.gallery-item { border: 1px solid var(--rule); }
+.gallery-item {
+  border: 1px solid var(--rule);
+  flex: 0 0 20rem;
+  max-width: 20rem;
+  transition: border-color .15s ease;
+}
+.gallery-item:hover { border-color: var(--accent); }
 .gallery-item img,
 .gallery-item .gallery-thumb {
   display: block;
