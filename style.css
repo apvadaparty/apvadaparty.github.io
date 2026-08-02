@@ -358,6 +358,7 @@ li { margin: .2rem 0; }
 .gallery-item {
   border: 1px solid #5f2c6b;
   border-radius: 6px;
+  background: #f6f0f7;
   flex: 1 1 20rem;
   max-width: 20rem;
   overflow: hidden;
