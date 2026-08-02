@@ -359,9 +359,17 @@ li { margin: .2rem 0; }
   border: 1px solid var(--rule);
   flex: 0 0 20rem;
   max-width: 20rem;
-  transition: border-color .15s ease;
+  overflow: hidden;
+  transition: border-color .15s ease, background-color .15s ease,
+              box-shadow .15s ease, transform .15s ease, border-radius .15s ease;
 }
-.gallery-item:hover { border-color: var(--accent); }
+.gallery-item:hover {
+  border-color: var(--accent);
+  background: #ece1ee;
+  border-radius: 6px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, .15);
+  transform: translateY(-3px);
+}
 .gallery-item img,
 .gallery-item .gallery-thumb {
   display: block;
