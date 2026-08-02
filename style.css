@@ -357,7 +357,7 @@ li { margin: .2rem 0; }
 }
 .gallery-item {
   border: 1px solid var(--rule);
-  flex: 0 0 20rem;
+  flex: 1 1 20rem;
   max-width: 20rem;
   overflow: hidden;
   transition: border-color .15s ease, background-color .15s ease,
