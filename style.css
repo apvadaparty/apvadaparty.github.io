@@ -61,6 +61,7 @@ body {
   max-width: var(--maxw);
   margin: 40px 0 10px;
   padding: 0 15px 3rem;
+  padding-left: 61px;   /* aligns homepage name with the chalk graphic in the masthead; assumes >700px */
 }
 .wrap--wide { max-width: min(92vw, 100rem); }   /* schedule page needs room */
 
@@ -150,6 +151,7 @@ main.home {
   max-width: var(--maxw);   /* match the content column so the name lines up with the page h1 */
   margin: 0;
   padding: 0 15px;
+  padding-left: 61px;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
