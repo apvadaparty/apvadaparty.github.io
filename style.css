@@ -67,7 +67,6 @@ body {
 /* homepage: identity panel on the left, prose on the right */
 main.home {
   max-width: var(--maxw);
-  margin: 0;
   display: grid;
   grid-template-columns: 16rem 1fr;
   gap: 2.5rem;
