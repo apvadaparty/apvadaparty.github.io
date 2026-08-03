@@ -23,7 +23,7 @@
   --rule-soft:   #e5e5e5;  /* faint dividers          */
   --muted:       #595959;  /* footer / secondary; 7:1 on white (AAA) */
   --faint:       #6a6a6a;  /* dates / least important; 5.4:1 on white (AA) */
-  --maxw:        70rem;    /* reading measure         */
+  --maxw:        min(92vw, 100rem);  /* reading measure — grows with the viewport, capped */
 }
 
 /* ---- reset-ish ---- */
@@ -59,14 +59,15 @@ body {
 /* ---- layout ---- */
 .wrap {
   max-width: var(--maxw);
-  margin: 40px auto 10px;
+  margin: 40px 0 10px;
   padding: 0 15px 3rem;
 }
-.wrap--wide { max-width: 70rem; }   /* schedule page needs room */
+.wrap--wide { max-width: min(92vw, 100rem); }   /* schedule page needs room */
 
 /* homepage: identity panel on the left, prose on the right */
 main.home {
   max-width: var(--maxw);
+  margin: 0;
   display: grid;
   grid-template-columns: 16rem 1fr;
   gap: 2.5rem;
@@ -148,7 +149,7 @@ main.home {
 }
 .topnav {
   max-width: var(--maxw);   /* match the content column so the name lines up with the page h1 */
-  margin: 0 auto;
+  margin: 0;
   padding: 0 15px;
   display: flex;
   flex-wrap: wrap;
@@ -506,7 +507,7 @@ button:focus-visible,
   font-family: 'Lato', sans-serif;
   border-top: 1px solid var(--rule);
   max-width: var(--maxw);   /* match nav + content column */
-  margin: 0 auto;
+  margin: 0;
   padding: 25px 15px;
   text-align: center;
   font-size: .9rem;
