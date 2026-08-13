@@ -69,19 +69,28 @@ body {
 main.home {
   max-width: var(--maxw);
   display: grid;
-  grid-template-columns: 16rem 1fr;
+  /* sidebar scales with the window instead of sitting at a fixed 16rem, so the
+     photo and the prose measure both breathe as the window widens */
+  grid-template-columns: clamp(11rem, 20vw, 19rem) 1fr;
   gap: 2.5rem;
-  align-items: start;
+  align-items: start;   /* required for the sticky panel below to work */
 }
 .profile {
   margin: 0;
+  /* the panel holds its place while the prose scrolls past it. The offset clears
+     the sticky masthead above (~100px tall); see --masthead-clear. */
+  position: sticky;
+  top: var(--masthead-clear, 108px);
   /* soft tint that fades out to the white background — no hard edge */
   background: radial-gradient(110% 80% at 50% 50%, var(--band), rgba(245, 245, 245, 0) 72%);
   border-radius: 14px;
   padding: 1.5rem 1.25rem;
   text-align: center;
 }
-.profile h1 { margin-top: 0; }
+.profile h1 {
+  margin-top: 0;
+  font-size: clamp(1.3rem, 2.1vw, 2.25rem);   /* scales with the panel it sits in */
+}
 .profile .lead { font-size: 1rem; color: var(--muted); }
 .home-body > :first-child { margin-top: 0; }
 .profile-links {
@@ -112,7 +121,7 @@ main.home {
 .headshot {
   display: block;
   width: 100%;
-  max-width: 170px;
+  max-width: clamp(120px, 13vw, 200px);   /* grows and shrinks with the window */
   aspect-ratio: 4 / 5;          /* portrait oval, not a tight circle */
   height: auto;
   border-radius: 50%;           /* with the 4:5 ratio this renders an ellipse */
@@ -128,6 +137,11 @@ main.home {
     gap: 1.25rem;
     max-width: var(--maxw);
   }
+  /* stacked layout: the panel sits above the prose, so pinning it would just
+     eat the screen */
+  .profile { position: static; }
+  .profile h1 { font-size: 2.125rem; }   /* full-width when stacked, so no need to shrink */
+  .headshot { max-width: 170px; }
 }
 
 /* ---- masthead + primary nav ---- */
