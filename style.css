@@ -179,24 +179,44 @@ main.home {
 body.home .topnav .site-name { display: none; }
 body.home .topnav ul { margin-left: auto; }
 
-/* chalk text image tagline (homepage only) */
+/* chalk text image tagline (homepage only).
+   The masthead is a row-reverse flex row so the nav (first in the HTML) sits at
+   the right and the tagline to its left. Because they are real flex items, they
+   wrap to a second line exactly when they stop fitting — no width breakpoint to
+   keep in sync. On wrap the nav keeps the first line and the tagline drops below. */
+body.home .masthead {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-items: center;   /* vertical midline of the chalk text lines up with the nav links */
+  row-gap: 8px;
+  /* the nav now shrink-wraps its links, so the masthead carries the right-hand
+     inset that .topnav's max-width used to provide — keeps the links ending at
+     the same 92vw content edge as the rest of the page */
+  padding-right: calc(8vw + 15px);
+}
+body.home .topnav {
+  flex: 0 1 auto;
+  max-width: none;
+  padding-left: 0;    /* the site name is hidden on home, so its indent isn't needed */
+  padding-right: 0;
+}
+/* keep the three links on one row, so the tagline is what wraps, not the nav */
+body.home .topnav ul { flex-wrap: nowrap; }
 .home-tagline-img {
-  position: absolute;
-  bottom: 13px;
-  left: 80px;
-  height: 48px;
-  width: auto;
+  /* 512px is the natural width at 48px tall (source is 1451x136); width-based
+     sizing with height:auto keeps the aspect ratio while it shrinks to fit. */
+  width: min(512px, calc(100% - 95px));
+  height: auto;
+  margin: 0 auto 0 80px;   /* margin-right:auto pushes it left within row-reverse */
+  position: relative;
+  top: 9px;                /* optical nudge: the script descenders read high when geometrically centered */
   pointer-events: none;
   -webkit-mask-image: linear-gradient(to right, white var(--chalk-reveal, 100%), transparent var(--chalk-reveal, 100%));
   mask-image: linear-gradient(to right, white var(--chalk-reveal, 100%), transparent var(--chalk-reveal, 100%));
 }
 @media (max-width: 599px) {
-  .home-tagline-img {
-    position: static;
-    display: block;
-    height: 30px;
-    margin: 6px 0 0 15px;
-  }
+  .home-tagline-img { width: min(320px, calc(100% - 95px)); }
 }
 @media (prefers-reduced-motion: reduce) {
   .home-tagline-img { -webkit-mask-image: none; mask-image: none; }
