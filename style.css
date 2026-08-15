@@ -65,8 +65,10 @@ body {
 }
 .wrap--wide { max-width: 92vw; }   /* schedule page needs room */
 
-/* homepage: identity panel on the left, prose on the right */
-main.home {
+/* identity panel on the left, prose on the right — homepage and the other
+   personal-site pages (Research, Teaching, Story) */
+main.home,
+main.with-profile {
   max-width: var(--maxw);
   display: grid;
   /* sidebar scales with the window instead of sitting at a fixed 16rem, so the
@@ -77,22 +79,35 @@ main.home {
 }
 .profile {
   margin: 0;
-  /* the panel holds its place while the prose scrolls past it. The offset clears
-     the sticky masthead above (~100px tall); see --masthead-clear. */
+  /* The panel holds its place while the prose scrolls past it. --masthead-clear
+     is set to where the panel already sits at rest (masthead height + the 40px
+     top margin on .wrap), so it pins immediately instead of drifting up first.
+     Measured at desktop widths: masthead is ~90px, ~105px on home (chalk tagline). */
   position: sticky;
-  top: var(--masthead-clear, 108px);
+  top: var(--masthead-clear, 144px);
   /* soft tint that fades out to the white background — no hard edge */
   background: radial-gradient(110% 80% at 50% 50%, var(--band), rgba(245, 245, 245, 0) 72%);
   border-radius: 14px;
   padding: 1.5rem 1.25rem;
   text-align: center;
 }
-.profile h1 {
-  margin-top: 0;
+/* the name is the page's <h1> on the homepage; elsewhere the page title owns the
+   <h1>, so the panel uses .profile-name and only borrows the styling */
+.profile h1,
+.profile .profile-name {
+  margin: 0 0 1rem;
+  font-family: 'Lato', sans-serif;
+  color: var(--heading);
+  font-weight: 700;
+  line-height: 1.3;
   font-size: clamp(1.3rem, 2.1vw, 2.25rem);   /* scales with the panel it sits in */
 }
+.profile .profile-name a { color: inherit; text-decoration: none; }
+.profile .profile-name a:hover,
+.profile .profile-name a:focus { color: var(--accent); }
 .profile .lead { font-size: 1rem; color: var(--muted); }
-.home-body > :first-child { margin-top: 0; }
+.home-body > :first-child,
+.page-body > :first-child { margin-top: 0; }
 .profile-links {
   list-style: none;
   padding: 0;
@@ -132,7 +147,8 @@ main.home {
   margin: 0 auto 1.1rem;
 }
 @media (max-width: 700px) {
-  main.home {
+  main.home,
+  main.with-profile {
     grid-template-columns: 1fr;
     gap: 1.25rem;
     max-width: var(--maxw);
@@ -140,11 +156,16 @@ main.home {
   /* stacked layout: the panel sits above the prose, so pinning it would just
      eat the screen */
   .profile { position: static; }
-  .profile h1 { font-size: 2.125rem; }   /* full-width when stacked, so no need to shrink */
+  .profile h1,
+  .profile .profile-name { font-size: 2.125rem; }   /* full-width when stacked, so no need to shrink */
   .headshot { max-width: 170px; }
 }
 
 /* ---- masthead + primary nav ---- */
+/* The banner is a row-reverse flex row so the nav (first in the HTML) sits at the
+   right and the chalk tagline to its left. Because they are real flex items, they
+   wrap to a second line exactly when they stop fitting — no width breakpoint to
+   keep in sync. On wrap the nav keeps the first line and the tagline drops below. */
 .masthead {
   background: #3a5a40 url('/chalkboard_screenshot.png') center/cover no-repeat;
   border-bottom: 1px solid #9aa89a;
@@ -152,20 +173,29 @@ main.home {
   position: sticky;
   top: 0;
   z-index: 100;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-items: center;   /* vertical midline of the chalk text lines up with the nav links */
+  row-gap: 8px;
+  /* the nav shrink-wraps its links, so the masthead carries the right-hand inset
+     that .topnav's max-width used to provide — keeps the links ending at the same
+     92vw content edge as the rest of the page */
+  padding-right: calc(8vw + 15px);
 }
-@media (min-width: 600px) { .masthead { padding: 25px 0; } }
+@media (min-width: 600px) { .masthead { padding-top: 25px; padding-bottom: 25px; } }
 .chalk-tray-deco {
   position: absolute;
   bottom: 0;
   left: 20px;
+  overflow: visible;   /* a tool set down further along the ledge sits outside the box */
   opacity: 0.9;
   display: block;
 }
 .topnav {
-  max-width: var(--maxw);   /* match the content column so the name lines up with the page h1 */
+  flex: 0 1 auto;
   margin: 0;
-  padding: 0 15px;
-  padding-left: 61px;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -190,34 +220,13 @@ main.home {
   font-weight: 700;
   border-bottom: 2px solid #a8b8a8;
 }
-body.home .topnav .site-name { display: none; }
-body.home .topnav ul { margin-left: auto; }
+/* the chalk tagline carries the site's identity in the banner, so the plain-text
+   site name is redundant; the nav links sit flush right on one row */
+.topnav .site-name { display: none; }
+.topnav ul { margin-left: auto; flex-wrap: nowrap; }
 
-/* chalk text image tagline (homepage only).
-   The masthead is a row-reverse flex row so the nav (first in the HTML) sits at
-   the right and the tagline to its left. Because they are real flex items, they
-   wrap to a second line exactly when they stop fitting — no width breakpoint to
-   keep in sync. On wrap the nav keeps the first line and the tagline drops below. */
-body.home .masthead {
-  display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
-  align-items: center;   /* vertical midline of the chalk text lines up with the nav links */
-  row-gap: 8px;
-  /* the nav now shrink-wraps its links, so the masthead carries the right-hand
-     inset that .topnav's max-width used to provide — keeps the links ending at
-     the same 92vw content edge as the rest of the page */
-  padding-right: calc(8vw + 15px);
-}
-body.home .topnav {
-  flex: 0 1 auto;
-  max-width: none;
-  padding-left: 0;    /* the site name is hidden on home, so its indent isn't needed */
-  padding-right: 0;
-}
-/* keep the three links on one row, so the tagline is what wraps, not the nav */
-body.home .topnav ul { flex-wrap: nowrap; }
-.home-tagline-img {
+/* chalk text image tagline — the banner on every personal-site page */
+.chalk-tagline {
   /* source is 1451x136, so 576px wide renders about 54px tall; width-based
      sizing with height:auto keeps the aspect ratio while it shrinks to fit. */
   width: min(576px, calc(100% - 95px));
@@ -225,15 +234,35 @@ body.home .topnav ul { flex-wrap: nowrap; }
   margin: 0 auto 0 80px;   /* margin-right:auto pushes it left within row-reverse */
   position: relative;
   top: 9px;                /* optical nudge: the script descenders read high when geometrically centered */
-  pointer-events: none;
   -webkit-mask-image: linear-gradient(to right, white var(--chalk-reveal, 100%), transparent var(--chalk-reveal, 100%));
   mask-image: linear-gradient(to right, white var(--chalk-reveal, 100%), transparent var(--chalk-reveal, 100%));
 }
+
+/* A tool picked up off the ledge becomes the pointer, and leaves its spot in the
+   tray empty — only one copy of it is ever on screen. Both cursors are drawn at
+   the same size as the tray tools they came from. */
+.tray-eraser.tool-in-hand,
+.tray-chalk.tool-in-hand { visibility: hidden; }
+
+/* eraser: plain block in the felt's dark grey, sized to the whole tray eraser
+   (44x16.5 including its bevelled top); hot-spot centred so the wipe follows the
+   middle of the block */
+.masthead.tool-eraser,
+.masthead.tool-eraser * {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='44' height='16.5'><rect width='44' height='16.5' fill='%233a3a3a'/></svg>") 22 8, crosshair;
+}
+/* chalk: the tray's stick at 45 degrees, hot-spot on the drawing tip. Drawn at
+   three quarters of the ledge stick's 48x7 — at this angle its footprint is a
+   34px square, so full size reads much heavier than the flat stick it came from. */
+.masthead.tool-chalk,
+.masthead.tool-chalk * {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><g transform='rotate(-45 16 16)'><rect x='-2' y='13.375' width='34' height='5.25' fill='%23f0f0ee'/><ellipse cx='32' cy='16' rx='2' ry='2.625' fill='%23ddddd8'/></g></svg>") 3 29, crosshair;
+}
 @media (max-width: 599px) {
-  .home-tagline-img { width: min(360px, calc(100% - 95px)); }
+  .chalk-tagline { width: min(360px, calc(100% - 95px)); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .home-tagline-img { -webkit-mask-image: none; mask-image: none; }
+  .chalk-tagline { -webkit-mask-image: none; mask-image: none; }
 }
 
 /* Homepage: chalkboard green accent */
@@ -442,6 +471,18 @@ details[open] summary .summary-preview { display: none; }
 details summary .summary-img { display: block; max-width: 50%; margin-top: .75rem; margin-left: auto; margin-right: auto; }
 details[open] summary .summary-img--collapsed { display: none; }
 .summary-img { display: block; max-width: 50%; margin-top: .75rem; margin-left: auto; margin-right: auto; }
+/* framed, scrollable preview of another page on the site */
+.page-embed {
+  display: block;
+  width: 100%;
+  height: 520px;
+  margin: .75rem 0 .4rem;
+  border: 1px solid var(--rule-soft);
+  background: var(--bg);
+}
+@media (max-width: 700px) {
+  .page-embed { height: 380px; }
+}
 .img-caption { font-size: .9em; color: var(--muted); margin-top: .5rem; text-align: justify; }
 @media (max-width: 600px) {
   details summary .summary-img, .summary-img { max-width: 80%; }
