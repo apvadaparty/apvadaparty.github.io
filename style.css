@@ -79,12 +79,24 @@ main.with-profile {
 }
 .profile {
   margin: 0;
-  /* The panel holds its place while the prose scrolls past it. --masthead-clear
-     is set to where the panel already sits at rest (masthead height + the 40px
-     top margin on .wrap), so it pins immediately instead of drifting up first.
-     Measured at desktop widths: masthead is ~90px, ~105px on home (chalk tagline). */
-  position: sticky;
+  /* The panel stays put while the prose scrolls past it — the whole way down,
+     including past the end of the prose. That last part is why this is `fixed`
+     and not `sticky`: a sticky element is confined to its containing block (here
+     the grid row), so it would come unstuck and scroll away at the bottom.
+
+     Being out of flow it is no longer a grid item, so it needs its own position
+     and width (both matched to the first grid column), and the prose has to be
+     placed in column 2 by hand — see .home-body/.page-body below.
+     --masthead-clear is set by profile-pin.js to where the panel sits at rest
+     (masthead height + main's top margin), so it does not jump on load; the
+     144px fallback covers JS being off. */
+  position: fixed;
   top: var(--masthead-clear, 144px);
+  left: 61px;                                /* matches .wrap's padding-left */
+  width: clamp(11rem, 20vw, 19rem);          /* matches the grid column track */
+  box-sizing: border-box;
+  /* No overflow clipping here: the headshot is scaled up with a transform, so it
+     spills past the panel's box by design and any clipping shears off its top. */
   /* soft tint that fades out to the white background — no hard edge */
   background: radial-gradient(110% 80% at 50% 50%, var(--band), rgba(245, 245, 245, 0) 72%);
   border-radius: 14px;
@@ -106,6 +118,10 @@ main.with-profile {
 .profile .profile-name a:hover,
 .profile .profile-name a:focus { color: var(--accent); }
 .profile .lead { font-size: 1rem; color: var(--muted); }
+/* the panel is positioned (out of flow), so it is no longer a grid item and
+   does not claim column 1 — the prose has to be told to stay in column 2 */
+.home-body,
+.page-body { grid-column: 2; }
 .home-body > :first-child,
 .page-body > :first-child { margin-top: 0; }
 /* the homepage greeting: heading type, a size down from an h2, but not a section
@@ -152,7 +168,8 @@ main.with-profile {
   object-fit: cover;
   object-position: center 0%;   /* bias toward the top of the image */
   transform: scale(1.15) translateY(-6%); /* zoom in slightly, shifted up */
-  border: 3px solid var(--bg);
+  border: clamp(3px, 0.7vw, 5px) solid var(--bg);   /* small gap between the photo and the ring */
+  outline: 2px solid var(--accent);   /* thin oval ring, same green as the hyperlink color */
   margin: 0 auto 1.1rem;
 }
 @media (max-width: 700px) {
@@ -163,8 +180,15 @@ main.with-profile {
     max-width: var(--maxw);
   }
   /* stacked layout: the panel sits above the prose, so pinning it would just
-     eat the screen */
-  .profile { position: static; }
+     eat the screen — back into the flow, full width, and none of the fixed
+     positioning above applies */
+  .profile {
+    position: static;
+    width: auto;
+  }
+  /* single column when stacked, so the explicit column-2 placement must go */
+  .home-body,
+  .page-body { grid-column: auto; }
   .profile h1,
   .profile .profile-name { font-size: 2.125rem; }   /* full-width when stacked, so no need to shrink */
   .headshot { max-width: 170px; }
