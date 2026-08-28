@@ -15,6 +15,7 @@
      term        e.g. "Summer 2026"
      institution e.g. "UC San Diego"
      href        link to the course home (root-relative)
+     evals       optional link to the student evaluations PDF
    ============================================================ */
 
 const COURSES = [
@@ -24,7 +25,8 @@ const COURSES = [
     role: "Instructor",
     term: "Summer 2026",
     institution: "UC San Diego",
-    href: "/teaching/cse151b/"
+    href: "/teaching/cse151b/",
+    evals: "/teaching/CSE_151_Student_Evals.pdf"
   }
 ];
 
@@ -47,6 +49,14 @@ function renderCourses() {
     meta.className = "course-meta";
     meta.textContent =
       " · " + c.role + " · " + c.institution + " · " + c.term;
+
+    if (c.evals) {
+      meta.appendChild(document.createTextNode(" · "));
+      const ev = document.createElement("a");
+      ev.href = c.evals;
+      ev.textContent = "Student Evaluations";
+      meta.appendChild(ev);
+    }
 
     li.appendChild(a);
     li.appendChild(meta);
